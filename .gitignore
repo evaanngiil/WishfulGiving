@@ -1,1 +1,9 @@
-pepe.txt
+.env
+.cache
+__pycache__
+/dist
+/build
+.vscode
+*.bak
+*~
+
