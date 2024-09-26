@@ -1,4 +1,4 @@
-# PresentCreator
+# Wishful Giving
 
 A menudo, al querer hacerle un regalo a alguien, nos encontramos con la dificultad de no saber qué le gustaría recibir. Es posible que la persona ya tenga todo lo que necesita, o que sus gustos sean muy especificos.  Esto puede generar indecisión, compras poco acertadas o incluso la necesidad de recurrir a regalos genéricos poco personales. 
 
