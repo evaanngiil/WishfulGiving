@@ -37,5 +37,6 @@ La lógica de negocio de la aplicación se centrará en:
 ## Configuración
 
 Claves privadas y públicas enlazadas con GitHub
+
 ![Claves](screenshots/clavesGithub.png)
 
