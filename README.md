@@ -40,3 +40,6 @@ Claves privadas y públicas enlazadas con GitHub
 
 ![Claves](screenshots/clavesGithub.png)
 
+## Licencia
+
+[Licencia](LICENSE)
