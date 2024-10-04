@@ -1,9 +1,1 @@
-.env
-.cache
-__pycache__
-/dist
-/build
-.vscode
-*.bak
-*~
-
+ideas.txt
