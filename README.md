@@ -1,26 +1,43 @@
 # Wishful Giving
 
-A menudo, al querer hacerle un regalo a alguien, nos encontramos con la dificultad de no saber qué le gustaría recibir. Es posible que la persona ya tenga todo lo que necesita, o que sus gustos sean muy especificos.  Esto puede generar indecisión, compras poco acertadas o incluso la necesidad de recurrir a regalos genéricos poco personales. 
+Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos personalizados y significativos a amigos y familiares, lo que afecta tanto la satisfacción de quienes reciben los regalos como la mía al darlos. Esto es un problema considerable debido a lo siguiente:
 
-## Contexto
+### Incertidumbre sobre los gustos de la persona:
 
-Nos encontramos ante el problema de la mochila, ya que se trata de seleccionar un cojunto de elementos, cada uno con un peso y valor (o prioridad), para maximizar el valor total sin exceder un peso máximo (presupuesto).
-En este caso, los "pesos" se refieren al costo de los regalos y los "valores" se refieren a la importancia o priridad que la persona destinataria del regalo asigna a cada ítem.
+- No siempre tengo claro qué regalos serían los más apreciados o útiles para la persona a la que quiero regalar. Esto me lleva a dos situaciones comunes:
 
-El objetivo es ayudar tanto al receptor como al dador de regalos a maximizar la satisfacción de la experiencia de regalar, de manera efectiva y colaborativa.
+  - Regalos genéricos: Termino comprando regalos poco personales, lo que puede hacer que el detalle pierda significado.
 
-## Beneficios para el usuario:
+  - Regalos incorrectos: A veces regalo algo que la persona ya tiene o que simplemente no le gusta, lo que genera una experiencia incómoda para ambos.
 
-* Los usuarios que crean la lista de deseos tienen la seguridad de recibir regalos que realmente desean y necesitan
-* Los usuarios que regalen evitan la incertidumbre y la posibilidad de hacer un regalo no deseado.
-* Se fomenta la colaboración y se facilita la organización de regalos grupales
+### Presupuesto limitado:
+
+- Tengo un presupuesto limitado y no siempre sé cómo asignarlo eficientemente para comprar el mejor regalo posible. Esto me causa los siguientes problemas:
+
+  - Gasto innecesario: A veces compro regalos que no generan la satisfacción esperada, lo que resulta en un gasto de dinero sin lograr el impacto deseado.
+
+  - Oportunidades perdidas: En otras ocasiones, podría haber optimizado mejor el presupuesto para regalar algo que hubiera sido mucho más significativo.
+
+### Falta de coordinación en regalos grupales:
+
+- No tengo una manera eficiente de organizarme con otras personas cuando queremos hacer un regalo en grupo, lo que genera problemas como:
+
+  - Compra de regalos duplicados: Varias personas terminan comprando cosas similares o incluso el mismo regalo, lo que reduce el impacto y la utilidad de los regalos.
+
+  - Distribución desigual del gasto: A veces, no se distribuye bien el costo entre los participantes, lo que puede generar conflictos o incomodidades.
+
+## Contexto del Problema: El Problema de la Mochila
+
+Este escenario se asemeja al "problema de la mochila", en el que se busca seleccionar un conjunto de elementos (regalos), cada uno con un peso (costo) y valor (preferencia del destinatario), de manera que se maximice el valor total sin exceder un peso máximo (presupuesto).
 
 ## Configuración
 
 Claves privadas y públicas enlazadas con GitHub
 
-![Claves](screenshots/clavesGithub.png)
+[Claves](screenshots/clavesGithub.png)
 
 ## Licencia
 
 [Licencia](LICENSE)
+
+
