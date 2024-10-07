@@ -2,32 +2,21 @@
 
 ## Ana
 
-Ana es una ingeniera de software que suele hacer regalos muy pensados a sus amigos y familiares.
-Cuando recibe una invitación de cumpleaños o evento, Ana busca regalos personalizados. Accede a la aplicación para consultar las listas de deseos de las personas. Evalúa los artículos disponibles y sus prioridades, filtra las opciones según su presupuesto y realiza una compra segura. 
-
-Escoge un regalo acorde a un presupuesto que no se haya duplicado, gracias a las sugerencias personalizadas de la aplicación
+Ana suele tener dificultades para encontrar regalos especiales para sus amigos y familiares, ya que siempre quiere que sus regalos sean únicos y significativos. Sin embargo, a menudo se enfrenta a la incertidumbre de no saber qué necesitan o desean en ese momento.
+Ana necesita una forma confiable de conocer las preferencias actuales de sus seres queridos, para asegurarse de que su regalo sea útil y significativo, y así evitar la compra de regalos genéricos o repetidos.
 
 ## Daniel
 
-Daniel es un padre ocupado que quiere asegurarse de que su familia le regale lo que realmente necesita para fechas importantes.
-
-En cada cumpleaños o aniversario, Daniel crea una lista de deseos y la comparte con sus hijos y amigos. Les asigna prioridades a los artículos que realmente desea. 
-
-Facilita que sus familiares y amigos seleccionen los regalos que más le interesan, asegurando que siempre recibirá algo útil y deseado
+Daniel es un padre ocupado con múltiples responsabilidades laborales y familiares. A menudo le resulta dificil encontrar tiempo para seleccionar los regalos adecuados para sus seres queridos. Suele estar preocupado por la posibilidad de comprar algo que no sea útil o apreciado, lo que le genera estrés y la sensación de estar fallando en ocasiones importantes como cumpleaños o festividades.
+Daniel necesita una solución que le ayude a elegir regalos adecuados de manera eficiente, sin tener que invertir mucho tiempo en la búsqueda y selección, y asegurándose de que el regalo sea apreciado por la persona que lo recibe.
 
 ## Carmen
 
-Carmen es una joven que organiza regalos grupales entre amigos para eventos importantes como bodas o aniversarios.
-
-Cuando sus amigos deciden hacer un regalo en grupo, Ana toma la iniciativa de organizar la compra. Usando Wishful Giving, crea una lista de regalos grupales, invita a otros a colaborar y establece un monto sugerido por cada participante. Luego, distribuye el costo total de forma equitativa entre los amigos, evitando conflictos y asegurándose de que el regalo sea uno de los más importantes en la lista.
-
-Coordina eficientemente el regalo grupal, recolecta contribuciones y compra un regalo prioritario en nombre del grupo.
+Carmen suele ser la encargada de organizar los regalos grupales entre sus amigos y familiares, pero esto implica mucho esfuerzo de coordinación. Las personas a manudo no contribuyen a tiempo o eligen regalos duplicados, lo que complica la organización.
+Carmen necesita una forma sencilla de coordinar las contribuciones de los participantes para que el regalo grupal se realice de manera eficiente, sin estrés y sin la posibilidad de duplicaciones.
 
 ## Pedro 
 
-Pedro es un gerente ocupado que busca optimizar su tiempo a la hora de comprar regalos.
-
-Para las celebraciones de amigos y familiares, Pedro no tiene tiempo para buscar regalos. Prefiere usar la aplicación Wishful Giving para que le sugiera automáticamente un regalo dentro de su presupuesto. Filtra los artículos de las listas de deseos según la prioridad, compra el artículo sugerido y automáticamente marca el regalo como comprado para evitar duplicaciones.
-
-Asegura la compra de un regalo eficiente y que encaje en las preferencias del destinatario, sin dedicar mucho tiempo a la búsqueda.
+Pedro es una persona muy ocupada y le resulta difícil encontrar tiempo para pensar en regalos adecuados. A menudo compra cualquier cosa sin saber realmente si es algo que la otra persona quiere o necesita, lo que genera estrés y dudas.
+Pedro necesita una forma eficiente de seleccionar regalos que sean apropiados y valorados por la otra persona, sin tener que invertir mucho tiempo en el proceso de búsqueda y selección
 
