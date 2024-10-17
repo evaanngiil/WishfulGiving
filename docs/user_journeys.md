@@ -19,4 +19,3 @@ Carmen necesita una forma sencilla de coordinar las contribuciones de los partic
 
 Pedro es una persona muy ocupada y le resulta difícil encontrar tiempo para pensar en regalos adecuados. A menudo compra cualquier cosa sin saber realmente si es algo que la otra persona quiere o necesita, lo que genera estrés y dudas.
 Pedro necesita una forma eficiente de seleccionar regalos que sean apropiados y valorados por la otra persona, sin tener que invertir mucho tiempo en el proceso de búsqueda y selección
-
