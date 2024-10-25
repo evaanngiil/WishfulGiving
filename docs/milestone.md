@@ -1,25 +1,22 @@
 # Milestones
 
-## [M0] Implementación de la creación y consulta de listas de deseos (MVP)
+## [M0] Creación y consulta de listas de deseos con organización y priorización (MVP)
 
-+ **Objetivo:** Implementar la funcionalidad para que los usuarios puedan crear y consultar listas de deseos. Sin embargo, este milestone no debe limitarse a operaciones CRUD. Se buscará aportar valor mediante la implementación de una funcionalidad que permita a los usuarios organizar y priorizar los artículos de sus listas, añadiendo metadatos que puedan ser utilizados en la etapa posterior para sugerir regalos basados en presupuestos.
-+ **Entregable:** Código que permita a los usuarios no solo crear y consultar listas de deseos, sino también asignar prioridades y clasificar los artículos. Esto facilitará futuras sugerencias personalizadas en el milestone 2.
-+ **Viablidad:** El milestone será considerado alcanzado cuando los usuarios puedan realizar estas operaciones y se validen mediante pruebas que verifiquen que las prioridades y clasificaciones se manejan correctamente.
+- **Descripción:** Entrega de una funcionalidad que permita a los usuarios crear y consultar listas de deseos, asignar prioridades y clasificar los artículos en sus listas.
+- **Criterio de aceptación:** Código que permita la creación, consulta, clasificación y priorización de listas de deseos, con pruebas que validen el manejo correcto de prioridades y clasificaciones.
 
-*HUs: HU1, HU2, HU3*
+---
 
-## [M1] Implementación de la gestión de presupuestos y sugerencias de regalos
+## [M1] Gestión de presupuestos y generación de sugerencias de regalos
 
-+ **Objetivo:** Implementar la lógica para gestionar presupuestos y proporcionar sugerencias de regalos basadas en las prioridades de la lista y el presupuesto disponible.
-+ **Entregable:** Código con las clases y/o módulos necesarios para gestionar presupuestos y generar sugerencias de regalos.
-+ **Viablidad:** Se considera viable cuando se pasen los tests planetados para la gestión de presupuestos y las sugerencias de regalos.
+- **Descripción:** Implementación de una funcionalidad para manejar presupuestos y generar sugerencias de regalos basadas en prioridades de la lista y presupuesto disponible.
+- **Criterio de aceptación:** Código que maneje presupuestos y genere sugerencias de regalos en función de las prioridades y el presupuesto, pasando pruebas que aseguren su correcto funcionamiento.
 
-*HUs: HU4, HU5*
+---
 
-#### [M2] Implemetación de la organización de regalos grupales
+## [M2] Organización de regalos grupales
 
-+ **Objetivo:** Implementar la funcionalidad para coordinar regalos grupales, incluyendo la distribución del costo entre los participantes y la prevención de duplicación de regalos.
-+ **Entregable:** Código con las clases y/o módulos necesarios para gestionar regalos grupales.
-+ **Viablidad:** Se considera viable cuando se pasen los tests planetados para la organización de regalos grupales
+- **Descripción:** Implementación de la funcionalidad de organización de regalos grupales, que distribuya el costo entre participantes y prevenga duplicaciones de regalos.
+- **Criterio de aceptación:** Código para gestionar regalos grupales con validaciones y pruebas que confirmen la distribución del costo y la prevención de duplicados.
 
-*HUs: HU6*
+---
