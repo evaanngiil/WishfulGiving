@@ -26,18 +26,14 @@ Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos person
 
   - Distribución desigual del gasto: A veces, no se distribuye bien el costo entre los participantes, lo que puede generar conflictos o incomodidades.
 
-## Contexto del Problema: El Problema de la Mochila
 
-Este escenario se asemeja al "problema de la mochila", en el que se busca seleccionar un conjunto de elementos (regalos), cada uno con un peso (costo) y valor (preferencia del destinatario), de manera que se maximice el valor total sin exceder un peso máximo (presupuesto).
+## Documentacion
 
-## Configuración
+- [Claves](screenshots/clavesGithub.png)
+- [User Journeys](docs/user_journeys.md)
+- [Historias de usuario](docs/user_stories.md)
+- [Milestones](docs/milestone.md)
 
-Claves privadas y públicas enlazadas con GitHub
 
-[Claves](screenshots/clavesGithub.png)
-
-## Licencia
-
-[Licencia](LICENSE)
 
 
