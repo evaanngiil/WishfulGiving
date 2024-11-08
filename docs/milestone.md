@@ -1,22 +1,15 @@
 # Milestones
 
-## [M0] Creación y consulta de listas de deseos con organización y priorización (MVP)
+## [M0] Modelo inicial
 
-- **Descripción:** Entrega de una funcionalidad que permita a los usuarios crear y consultar listas de deseos, asignar prioridades y clasificar los artículos en sus listas.
-- **Criterio de aceptación:** Código que permita la creación, consulta, clasificación y priorización de listas de deseos, con pruebas que validen el manejo correcto de prioridades y clasificaciones.
-
----
-
-## [M1] Gestión de presupuestos y generación de sugerencias de regalos
-
-- **Descripción:** Implementación de una funcionalidad para manejar presupuestos y generar sugerencias de regalos basadas en prioridades de la lista y presupuesto disponible.
-- **Criterio de aceptación:** Código que maneje presupuestos y genere sugerencias de regalos en función de las prioridades y el presupuesto, pasando pruebas que aseguren su correcto funcionamiento.
+- Crear un punto de partida del modelo del problema a partir de la historia de usuario 1, para representar de manera clara la información y relaciones necesarias.
+- **Entregable:** Archivos que contengan un modelo de código modularizado que refleje la estructura de datos y relaciones del modelo. 
+- **Viabilidad:** Siguiendo las buenas prácticas en el código del lenguaje elegido, se considerará un modelo válido cuando se englobe los problemas expresados en la HU y haya relación entre los distintos datos.
 
 ---
 
-## [M2] Organización de regalos grupales
+## [M1] Lógica de negocio
 
-- **Descripción:** Implementación de la funcionalidad de organización de regalos grupales, que distribuya el costo entre participantes y prevenga duplicaciones de regalos.
-- **Criterio de aceptación:** Código para gestionar regalos grupales con validaciones y pruebas que confirmen la distribución del costo y la prevención de duplicados.
-
----
+- Haciendo uso del modelo creado en el milestone anterior y las fuentes de información, facilitaremos el proceso de resolución del problema descrito en la historia de usaurio 1.
+- **Entregable:** Archivos de código donde se implemente una solución al problema propuesto en la historia de usuario 1. Ampliando el milestone anterior con informacion estructurada.
+- **Viabilidad:**  Se considerará válido cuando el modelo de datos que resuelva las necesidades de la historia de usaurio referida
