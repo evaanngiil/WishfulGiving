@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class ListaDeseos {
     private final long id;
-    private ArrayList<ElementoLista> deseos;
+    private ArrayList<Producto> deseos;
 
     public ListaDeseos() {
         validarListaDeseos(id);
         this.id = id;
-        this.deseos = new ArrayList<ElementoLista>();
+        this.deseos = new ArrayList<Producto>();
     }
 
     private void validarListaDeseos(long id) {
