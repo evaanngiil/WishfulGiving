@@ -4,7 +4,7 @@ public class ListaDeseos {
     private final long id;
     private ArrayList<Producto> deseos;
 
-    public ListaDeseos() {
+    public ListaDeseos(long id) {
         validarListaDeseos(id);
         this.id = id;
         this.deseos = new ArrayList<Producto>();
