@@ -4,7 +4,6 @@ public class Usuario {
 
     public Usuario( String nombre, ListaDeseos listaDeseos) {
         validarUsuario(nombre, listaDeseos);
-        this.id = id;
         this.nombre = nombre.trim();
         this.listaDeseos = listaDeseos():
     }
