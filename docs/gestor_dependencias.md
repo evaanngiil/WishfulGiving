@@ -15,6 +15,8 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
 
 - *Comunidad* : Es importante que cuente con una comunidad activa y recursos de soporte confiables.
 
+---
+
 ## Gestores de Dependencias Evaluados
 
 ### 1. Apache Maven
@@ -32,6 +34,8 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
 
 - **Documentacion Oficial**: [Maven](https://maven.apache.org/)
 
+---
+
 ### 2. Gradle
 
 - **Descripción**: Gradle es un gestor de depencias y automatización de tareas diseñado para ofrecer flexibilidad y alto rendimiento. Su configuración se puede definir en Groovy o Kotlin DSL (`buil.gradle` o `build.gradle.kts`).
@@ -45,7 +49,9 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
   - Puede ser excesivo para proyectos simples.
 - **Documentación oficial**: [Gradle](https://gradle.org/)
 
-### Apache Ivy
+---
+
+### 3. Apache Ivy
 
 - **Descripción**: Ivy es un sistema de gestión de dependencias ligero que se integra con Apache Ant. Utiliza un archivo `ivy.xml` para definir dependencias y repositorios.
 
@@ -58,6 +64,7 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
   - Carece de algunas características modernas disponibles en otros gestores.
 - **Documentación oficial**: [Ivy](https://ant.apache.org/ivy/)
 
+---
 
 ## Selección del gestor de Depedencias
 
