@@ -33,7 +33,8 @@ Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos person
 - [User Journeys](docs/user_journeys.md)
 - [Historias de usuario](docs/user_stories.md)
 - [Milestones](docs/milestone.md)
-
+- [Gestor de dependencias](docs/gestor_dependencias.md)
+- [Gestor de tareas](docs/gestor_tareas.md)
 
 
 
