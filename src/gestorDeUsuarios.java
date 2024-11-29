@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GestorDeUsuarios { 
-    private ArrayList<Usuario> usuarios;
+    private HashMap<String, Usuario> usuarios; // Cambiado a HashMap
 
     public GestorDeUsuarios() {
-        this.usuarios = new ArrayList<Usuario>();	
+        this.usuarios = new HashMap<>();	
     }
 }
