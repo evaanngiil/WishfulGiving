@@ -1,0 +1,47 @@
+// Configuración del sistema de construcción
+plugins {
+    id 'java'
+    id 'application'
+}
+
+// Metadatos con información del proyecto group -> package
+version = '1.0.0'
+description = 'Lista de deseos compartida para cumpleaños'
+
+// Configuración del entorno de compilación
+java {
+    //manifest.attributes("Main-Class": "src.gestorDeUsarios")
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // Especificar la versión de Java
+    }
+}
+
+// {archiveBaseName}-{archiveVersion}-{archiveClassifier}.jar
+
+// Repositorios (en este caso, no se añaden dependencias externas, por ahora)
+repositories {
+    mavenCentral() // Repositorio Maven Central donde estan todas las grandes librerías
+}
+
+// Configuración de tareas personalizadas
+task install(type: Copy) {
+    group = 'build'
+    description = 'Instala el proyecto'
+    doLast {
+        println("El proyecto se ha configurado correctamente.")
+    }
+}
+
+task verify(type: Copy) {
+    group = 'verification'
+    description = 'Verifica la compilación del proyecto'
+    dependsOn compileJava // Se asegura de que el código Java esté compilado antes de verificar
+    doLast {
+        println("Compilación exitosa: El código fuente es válido.")
+    }
+}
+
+check.dependsOn verify
+check.doLast {
+    println("Llega a check")
+}
