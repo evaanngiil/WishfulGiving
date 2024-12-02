@@ -1,5 +1,5 @@
 lenguaje: java
-entidad: src/gestorDeUsuarios.java
+entidad: src/gestor_de_usuarios.java
 automatizar:
   fichero: build.gradle
   orden: "./gradlew"
