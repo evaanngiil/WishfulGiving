@@ -1,0 +1,5 @@
+lenguaje: java
+entidad: src/gestorDeUsuarios.java
+automatizar:
+  fichero: build.gradle
+  orden: "./gradlew check"
