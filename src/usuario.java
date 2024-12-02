@@ -6,7 +6,7 @@ public class Usuario {
 
     public Usuario(String nombre) {
         validarUsuario(nombre);
-        this.nombre = nombre.trim();
+        this.nombre = nombre;
         this.listaDeseos = new ArrayList<Producto>();	
     }
 
