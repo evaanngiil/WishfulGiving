@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class ListaRegalos {
     private final String destinatario;
-    private final Presupuesto presupuesto;
+    private final float presupuesto;
     private final ArrayList<ElementoLista> regalos;
 
-    public ListaRegalos(String destinatario, Presupuesto presupuesto) {
+    public ListaRegalos(String destinatario, float presupuesto) {
         if (destinatario == null || destinatario.isEmpty()) {
             throw new IllegalArgumentException("El nombre del destinatario no puede estar vacío.");
         }
-        if (presupuesto == null) {
-            throw new IllegalArgumentException("La lista debe tener un presupuesto.");
+        if (presupuestoTotal < 0) {
+            throw new IllegalArgumentException("El presupuesto debe ser un valor positivo.");
         }
         this.destinatario = destinatario;
         this.presupuesto = presupuesto;
