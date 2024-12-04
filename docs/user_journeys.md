@@ -1,0 +1,12 @@
+# User Journeys
+## Ana
+Ana, la destinataria de los regalos, está próxima a cumplir años y quiere asegurarse de recibir cosas que realmente le gusten. Abre la aplicación y accede a su lista de deseos colaborativa, que ha compartido con sus amigos, pero que aún está vacía. Utiliza la barra de búsqueda para encontrar regalos específicos, como un "set de pinceles de pintura", selecciona la opción que más le gusta y le asigna una prioridad alta porque es algo que realmente desea. Luego, añade otros regalos, como una "taza personalizada", pero les asigna una prioridad baja porque son menos importantes para ella. Tras completar su lista con varios regalos y priorizarlos según sus gustos, guarda los cambios y verifica que todo esté actualizado. Ahora se siente tranquila, sabiendo que sus amigos podrán usar la lista para escoger regalos que la harán feliz, priorizando los más importantes dentro de su presupuesto.
+
+## Daniel
+Daniel es un padre ocupado con múltiples responsabilidades laborales y familiares. A menudo le resulta dificil encontrar tiempo para seleccionar los regalos adecuados para sus seres queridos. Suele estar preocupado por la posibilidad de comprar algo que no sea útil o apreciado, lo que le genera estrés y la sensación de estar fallando en ocasiones importantes como cumpleaños o festividades. Daniel necesita una solución que le ayude a elegir regalos adecuados de manera eficiente, sin tener que invertir mucho tiempo en la búsqueda y selección, y asegurándose de que el regalo sea apreciado por la persona que lo recibe.
+
+## Carmen
+Carmen suele ser la encargada de organizar los regalos grupales entre sus amigos y familiares, pero esto implica mucho esfuerzo de coordinación. Las personas a manudo no contribuyen a tiempo o eligen regalos duplicados, lo que complica la organización. Carmen necesita una forma sencilla de coordinar las contribuciones de los participantes para que el regalo grupal se realice de manera eficiente, sin estrés y sin la posibilidad de duplicaciones.
+
+## Pedro
+Pedro es una persona muy ocupada y le resulta difícil encontrar tiempo para pensar en regalos adecuados. A menudo compra cualquier cosa sin saber realmente si es algo que la otra persona quiere o necesita, lo que genera estrés y dudas. Pedro necesita una forma eficiente de seleccionar regalos que sean apropiados y valorados por la otra persona, sin tener que invertir mucho tiempo en el proceso de búsqueda y selección
