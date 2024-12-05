@@ -10,7 +10,6 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 ---
 
 ## **Gestores de Tareas Evaluables**  
-
 ### **1. Gradle**  
 - **Descripción**: Además de ser un gestor de dependencias, Gradle destaca como una potente herramienta de automatización de tareas para proyectos Java.
 - **Ventajas**:  
