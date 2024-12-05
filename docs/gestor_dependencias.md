@@ -2,7 +2,6 @@
 
 La gestión de dependencias es escencial para garantizar que el proyecto pueda integrarse con bibliotecas externas de manera eficiente, manteniendo su estabilidad y facilidad de mantenimiento. En este documento se detalla los gestores de dependencias considereados para el proyecto y las razones detrás de la selección. Para ello se han considerado tres opciones: Apache Maven, Gradle y Apache Ivy
 
-
 ## Criterios de selección
 
 Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios:
