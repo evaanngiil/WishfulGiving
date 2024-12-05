@@ -1,17 +1,13 @@
 # Gestor de dependencias
 
-La gestión de dependencias es escencial para garantizar que el proyecto pueda integrarse con bibliotecas externas de manera eficiente, manteniendo su estabilidad y facilidad de mantenimiento. En este documento se detalla los gestores de dependencias considereados para el proyecto y las razone detrás de la selección. Para ello se han considerado tres opciones: Apache Maven, Gradle y Apache Ivy
+La gestión de dependencias es escencial para garantizar que el proyecto pueda integrarse con bibliotecas externas de manera eficiente, manteniendo su estabilidad y facilidad de mantenimiento. En este documento se detalla los gestores de dependencias considereados para el proyecto y las razones detrás de la selección. Para ello se han considerado tres opciones: Apache Maven, Gradle y Apache Ivy
 
 
 ## Criterios de selección
 
 Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios:
 
-- *Compatibilidad* : El gestor de dependencias debe ser compaible con el ecosistema de Java y soportar estándares modernos como `XML.
-
 - *Simplicidad* : Debe proporcionar una configuración clara, con comandos intuitivos y un flujo de trabajo bien definido.
-
-- *Escalabilidad* : Debe ser capax de manejar dependencias de proyectos pequeños y grandes sin comprometer el rendimiento.
 
 - *Comunidad* : Es importante que cuente con una comunidad activa y recursos de soporte confiables.
 
@@ -21,7 +17,7 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
 
 ### 1. Apache Maven
 
-- **Descripcion**: Maven es una herramienta de gestión de proyectos y dependencias ampliamente utilizada en el ecosistema Java. Utiliza un archiv `pom.xml` como base para definir configuraciones y dependencias.
+- **Descripcion**: Maven es una herramienta de gestión de proyectos y dependencias ampliamente utilizada en el ecosistema Java. Utiliza un archivo `pom.xml` como base para definir configuraciones y dependencias.
 
 - **Ventajas**:
   - Compatible con la mayoría de los frameworks y bibliotecas de Java.
@@ -71,6 +67,6 @@ Para poder elegir uno de los gestores nos vamos a basar en una serie de citerios
 Para nuestro proyecto, hemos seleccionado Gradle como gestor de dependencias debido a las siguientes razones:
 
 1. **Flexibilidad**: Gradle permite personalizar tareas y optimizar flujos de trabajo según necesidades del proyecto.
-2. **Rendimiento**: Ofrece tiempos de compilación más rápidos, especialmente en proyectos de gran escala.
-3. **Ecosistema Moderno**: Su integración con Kotlin DSL mejora la legibidad y mentalidad del código de configuración.
-4. **Compatibilidad**: Gradle es compatible con la mayotía de frameworks y bibliotecas de Java, proporcionando una solución robusta y escalable.
+2. **Ecosistema Moderno**: Su integración con Kotlin DSL mejora la legibidad y mentalidad del código de configuración.
+3. **Comunidad**: Gradle tiene una comunidad activa y creciente, lo que proporciona soporte y recursos actualizados para resolver problemas y aprender.
+
