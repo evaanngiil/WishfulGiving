@@ -25,8 +25,20 @@ repositories {
     mavenCentral()
 }
 
-check.doLast {
-    println("Tarea Check realizada")
+tasks.register('checkSyntax') {
+    group = 'verification'
+    description = 'Verifica únicamente la sintaxis del código Java sin compilar.'
+
+    dependsOn compileJava
+    finalizedBy clean
+
+    doLast {
+        println("Tarea Check sintaxis realizada")
+    }
 }
 
-
+tasks.named('check').configure {
+    dependsOn.clear()
+    dependsOn compileJava
+    finalizedBy clean
+}
