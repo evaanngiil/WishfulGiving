@@ -1,30 +1,32 @@
-// Configuración del sistema de construcción
 plugins {
     id 'java'
     id 'application'
 }
 
-// Metadatos con información del proyecto group -> package
-// group = 'com.WishfulGiving'
 version = '1.0.0'
 description = 'Lista de deseos compartida para cumpleaños'
 
-// Configuración del entorno de compilación
-java {
-    //manifest.attributes("Main-Class": "src.gestorDeUsarios")
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17) // Especificar la versión de Java
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
     }
 }
 
-// {archiveBaseName}-{archiveVersion}-{archiveClassifier}.jar
-
-// Repositorios (en este caso, no se añaden dependencias externas, por ahora)
-repositories {
-    mavenCentral() // Repositorio Maven Central donde estan todas las grandes librerías
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
-// Tareas del proyecto
+
+repositories {
+    mavenCentral()
+}
+
 check.doLast {
     println("Tarea Check realizada")
 }
+
+
