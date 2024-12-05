@@ -5,10 +5,6 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 - *Simplicidad* : El gestor elegido debe ser fácil de configurar y uttlizar, con una curva de aprendizaje reducida.
 
-- *Rendimiento* : El gestor debe ser eficiente en la ejecución de tareas, especialmente en proyectos donde su tamaño destaca.
-
-- *Escalabilidad* : Debe permitir manejar tareas complejas y ser flexible en proyectos pequeños y grandes.
-
 - *Comunidad* : Es escencial contar con una comuidad activa y documentación adecuada para resolver posibles inconvenientes.
 
 ---
@@ -16,7 +12,7 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 ## **Gestores de Tareas Evaluables**  
 
 ### **1. Gradle**  
-- **Descripción**: Además de ser un gestor de dependencias, Gradle destaca como una potente herramienta de automatización de tareas para proyectos Java.  
+- **Descripción**: Además de ser un gestor de dependencias, Gradle destaca como una potente herramienta de automatización de tareas para proyectos Java.
 - **Ventajas**:  
   - Flexibilidad para definir y personalizar tareas mediante Groovy o Kotlin DSL.  
   - Integración nativa con herramientas modernas como JUnit para pruebas y Spring Boot para desarrollo web.  
@@ -71,8 +67,8 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 Para nuestro proyecto, hemos elegido **Gradle** como gestor de tareas. La decisión se basa en los siguientes puntos:  
 
-1. **Flexibilidad**: Gradle permite definir tareas personalizadas con facilidad y se adapta bien a las necesidades específicas del proyecto.  
-2. **Rendimiento**: Su sistema incremental es ideal para optimizar tiempos en proyectos grandes.  
-3. **Ecosistema Moderno**: Es compatible con los frameworks y herramientas más actuales en Java, garantizando la escalabilidad y mantenibilidad del proyecto.  
+1. **Flexibilidad**: Gradle permite definir tareas personalizadas con facilidad y se adapta bien a las necesidades específicas del proyecto.   
+2. **Ecosistema Moderno**: Es compatible con los frameworks y herramientas más actuales en Java, garantizando la escalabilidad y mantenibilidad del proyecto.
+3. **Comunidad Activa**: Gradle cuenta con una comunidad activa y en crecimiento, proporcionando soporte y recursos actualizados que facilitan la resolución de problemas y el aprendizaje continuo.
 
 ---
