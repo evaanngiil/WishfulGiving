@@ -1,11 +1,13 @@
 # Gestor de Tareas
+La automatización de tareas es fundamental para optimizar los flujos de trabajo en el desarrollo de software. Este documento compara las herramientas más relevantes para seleccionar la más adecuada para proyectos en Java.
 
 ## Criterios de selección
 Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado los siguientes criterios:
 
-- *Simplicidad* : El gestor elegido debe ser fácil de configurar y uttlizar, con una curva de aprendizaje reducida.
-
-- *Comunidad* : Es escencial contar con una comuidad activa y documentación adecuada para resolver posibles inconvenientes.
+Facilidad de Configuración: Tiempo promedio necesario para configurar tareas básicas (minutos).
+- *Eficiencia*: Tiempo de ejecución de tareas comunes en proyectos estándar (ms).
+- *Comunidad*: Cantidad de recursos y paquetes desarrollados, soporte en foros y documentación oficial actualizada.
+- *Integración*: Disponibilidad de funcionalidades prediseñadas, como plugins o configuraciones predeterminadas, que simplifiquen tareas comunes.
 
 ---
 
@@ -14,8 +16,9 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 - **Descripción**: Además de ser un gestor de dependencias, Gradle destaca como una potente herramienta de automatización de tareas para proyectos Java.
 - **Ventajas**:  
   - Flexibilidad para definir y personalizar tareas mediante Groovy o Kotlin DSL.  
-  - Integración nativa con herramientas modernas como JUnit para pruebas y Spring Boot para desarrollo web.  
-  - Alta eficiencia en proyectos de gran tamaño gracias a su sistema de tareas incremental.  
+  - Integración nativa con herramientas modernas como JUnit para pruebas y Spring Boot para desarrollo web.
+  - Alta eficiencia en proyectos de gran tamaño gracias a su sistema de tareas incremental.
+  - Plugins extensos que permiten manejar tareas comunes como pruebas, empaquetado y despliegue sin configuraciones manuales.
 - **Desventajas**:  
   - Puede ser excesivo para proyectos muy simples.  
   - La curva de aprendizaje inicial puede ser más pronunciada.  
@@ -64,10 +67,11 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 ## **Selección del Gestor de Tareas**  
 
-Para nuestro proyecto, hemos elegido **Gradle** como gestor de tareas. La decisión se basa en los siguientes puntos:  
+### Gestor Seleccionado: *Gradle*
+Gradle se destaca como la mejor opción por su equilibrio entre facilidad de uso, rendimiento, y herramientas integradas.
 
-1. **Flexibilidad**: Gradle permite definir tareas personalizadas con facilidad y se adapta bien a las necesidades específicas del proyecto.   
-2. **Ecosistema Moderno**: Es compatible con los frameworks y herramientas más actuales en Java, garantizando la escalabilidad y mantenibilidad del proyecto.
-3. **Comunidad Activa**: Gradle cuenta con una comunidad activa y en crecimiento, proporcionando soporte y recursos actualizados que facilitan la resolución de problemas y el aprendizaje continuo.
+- *Eficiencia*: Ejecuta tareas de manera incremental, optimizando el tiempo en proyectos grandes.
+- *Comunidad*: Su comunidad activa asegura recursos actualizados y soporte para problemas comunes.
+- *Herramientas Integradas*: Plugins avanzados simplifican tareas frecuentes, como pruebas o despliegues, lo que reduce significativamente la complejidad y tiempo de implementación.
 
 ---
