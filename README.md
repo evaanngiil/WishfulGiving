@@ -26,6 +26,12 @@ Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos person
 
   - Distribución desigual del gasto: A veces, no se distribuye bien el costo entre los participantes, lo que puede generar conflictos o incomodidades.
 
+## Tareas
+
+- `./gradlew check`: Verifica el código fuente para su correcto formateado
+- `./gradlew buildDependents`: Ensambla y prueba este proyecto y todos los proyectos que dependen de él
+- `./gradlew clean`: Elimina los archivos generados por compilaciones anteriores
+- `./gradlew assemble`: Compila los archivos de origen y empaqueta el proyecto
 
 ## Documentacion
 
@@ -33,7 +39,8 @@ Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos person
 - [User Journeys](docs/user_journeys.md)
 - [Historias de usuario](docs/user_stories.md)
 - [Milestones](docs/milestone.md)
-
+- [Gestor de dependencias](docs/gestor_dependencias.md)
+- [Gestor de tareas](docs/gestor_tareas.md)
 
 
 
