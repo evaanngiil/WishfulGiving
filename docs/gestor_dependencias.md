@@ -7,8 +7,8 @@ La gestión de dependencias es esencial para asegurar que el proyecto pueda inte
 Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - *Eficiencia*: Tiempo medio para resolver dependencias en un proyecto estándar (ms).
-
 - *Comunidad*: Cantidad de recursos y paquetes desarrollados, soporte en foros y documentación oficial actualizada.
+- *Compatibilidad*: Porcentaje de frameworks y bibliotecas Java populares soportados de forma nativa.
 
 ---
 
@@ -18,14 +18,10 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - **Descripción**: Maven es una herramienta de gestión de proyectos y dependencias ampliamente utilizada en el ecosistema Java. Utiliza un archivo `pom.xml` como base para definir configuraciones y dependencias.
 
-- **Ventajas**:
-  - Compatible con la mayoría de los frameworks y bibliotecas de Java.
-  - Gran cantidad de plugins disponibles para automatizar tareas comunes.
-  - Estructura estándar que facilita la integración con otros equipos y herramientas.
+- **Eficiencia**: Resuelve dependencias en tiempos razonables, aunque menos optimizados que herramientas más modernas.  
+- **Comunidad**: Muy activa, con abundante documentación y soporte frecuente en foros técnicos. 
+- **Compatibilidad**: Altamente compatible con bibliotecas y frameworks Java populares.  
 
-- **Desventajas**:
-  - Sintaxis basada en XML, que puede ser extensa y menos intuitiva.
-  - Rendimiento menor en comparación con herramientas más modernas como Gradle.
 
 - **Documentación Oficial**: [Maven](https://maven.apache.org/)
 
@@ -35,15 +31,9 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - **Descripción**: Gradle es un gestor de dependencias y automatización de tareas diseñado para ofrecer alto rendimiento. Su configuración se puede definir en Groovy o Kotlin DSL (`build.gradle` o `build.gradle.kts`).
 
-- **Ventajas**:
-  - Rendimiento optimizado para gracias a su sistema de caché y ejecución incremental.
-  - Sintaxis moderna y concisa, especialmente con Groovy.
-  - Flexibilidad para personalizar tareas y procesos.
-  - Gran cantidad de plugins que contienen tareas predefinidas.
-
-- **Desventajas**:
-  - Curva de aprendizaje ligeramente más pronunciada para usuarios nuevos.
-  - Puede ser excesivo para proyectos simples.
+- **Eficiencia**: Muy alta. Resuelve dependencias rápidamente gracias al uso de caché y ejecución incremental.  
+- **Comunidad**: Activa y moderna, con abundantes recursos disponibles.  
+- **Compatibilidad**: Compatible con prácticamente todas las bibliotecas y frameworks Java populares.  
 
 - **Documentación Oficial**: [Gradle](https://gradle.org/)
 
@@ -53,14 +43,10 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - **Descripción**: Ivy es un sistema de gestión de dependencias ligero que se integra con Apache Ant. Utiliza un archivo `ivy.xml` para definir dependencias y repositorios.
 
-- **Ventajas**:
-  - Ligero y fácil de integrar con proyectos basados en Ant.
-  - Permite configuraciones personalizadas de repositorios.
-  - Independencia del ciclo de vida de Ant para tareas específicas.
+- **Eficiencia**: Razonable, aunque carece de las optimizaciones avanzadas de Gradle.  .  
+- **Comunidad**: Menos activa, con soporte limitado en comparación con Maven y Gradle.
+- **Compatibilidad**: Compatible con una gran cantidad de bibliotecas, pero puede requerir configuraciones adicionales.  
 
-- **Desventajas**:
-  - Menos popular y con una comunidad más pequeña en comparación con Maven y Gradle.
-  - Carece de soporte nativo para plugins avanzados disponibles en otros gestores.
 
 - **Documentación Oficial**: [Ivy](https://ant.apache.org/ivy/)
 
@@ -69,8 +55,5 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 ## Selección del Gestor de Dependencias
 
 ### Gestor Seleccionado: *Gradle*
-Gradle ofrece el mejor equilibrio entre eficiencia, soporte de comunidad y facilidad de uso, lo que lo convierte en la opción más adecuada para proyectos modernos.
 
-- *Eficiencia*: Resolución rápida en proyectos grandes (promedio ~50% más rápido que Maven).
-- *Comunidad y Documentación*: Comunidad activa y recursos actualizados aseguran soporte continuo.
-- *Facilidad de Uso*: Los plugins predefinidos y la sintaxis moderna facilitan tareas como pruebas, empaquetado y despliegue, reduciendo el tiempo de configuración inicial.
+Gradle fue seleccionado por su superior eficiencia, compatibilidad y comunidad. Es más rápido que Maven gracias a su sistema de caché y supera a Ivy en soporte y modernidad, ofreciendo la mejor combinación para proyectos medianos y grandes que requieren rendimiento y flexibilidad. Maven e Ivy pueden ser más adecuados para proyectos simples.
