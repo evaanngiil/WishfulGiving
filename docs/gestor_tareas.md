@@ -34,7 +34,7 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 - **Descripción**: [Maven](https://maven.apache.org/) es un gestor de dependencias y de tareas cuyo fichero base sigue el estándar XML y está basado en el principio de "convención sobre configuración".
 
 - **Comunidad**: No es obvio a dónde dirigirse para recibir asistencia continua con Maven. No se pueden plantear problemas en el repositorio de GitHub y el canal de Slack es solo para colaboradores.
-- **Flexibilidad**: Maven ofrece un nivel principal de personalización a través de su archivo pom.xml, que permite configurar las tareas del proyecto de forma estructurada. Sin embargo, debido a su enfoque en la convención sobre configuración, las opciones de personalización son más limitadas en comparación con Gradle o Ant. Es posible escribir plugins personalizados, pero para ello se requiere crear y publicar un proyecto independiente.
+- **Flexibilidad**: Maven ofrece un nivel principal de personalización a través de su archivo `pom.xml`, que permite configurar las tareas del proyecto de forma estructurada. Sin embargo, debido a su enfoque en la convención sobre configuración, las opciones de personalización son más limitadas en comparación con Gradle o Ant. Es posible escribir plugins personalizados, pero para ello se requiere crear y publicar un proyecto independiente.
 
 ---
 
