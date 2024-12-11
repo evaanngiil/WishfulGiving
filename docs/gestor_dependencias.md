@@ -20,7 +20,7 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - **Eficiencia**: Build completo promedio toma más de 30 segundos en proyectos medianos; no soporta builds incrementales nativamente 
 - **Comunidad**: No es obvio a dónde dirigirse para recibir asistencia continua con Maven. No se pueden plantear problemas en el repositorio de GitHub y el canal de Slack es solo para colaboradores.
-- **Flexibilidad**: Maven tiene un nivel principal de personalización: los `pom.xml` de cada proyecto, que también pueden referenciar configuraciones en el archivo `settings.xml` global. Permite escribir nuestro propio plugin reusable. Para escribir uno personalizado debemos crear un proyecto independiente y publicar el plugin.
+- **Flexibilidad**: Maven ofrece un nivel principal de personalización a través de su archivo `pom.xml`, que permite configurar las tareas del proyecto de forma estructurada. Sin embargo, debido a su enfoque en la convención sobre configuración, las opciones de personalización son más limitadas en comparación con Gradle o Ant. Es posible escribir plugins personalizados, pero para ello se requiere crear y publicar un proyecto independiente.
 
 ---
 
@@ -30,7 +30,7 @@ Para elegir uno de los gestores, nos basaremos en una serie de criterios:
 
 - **Eficiencia**: Hasta 85 veces más rápido que Maven en builds incrementales gracias al uso de caché y ejecución paralela. La caché en Gradle almacena salidas de tareas previamente ejecutadas para reutilizarlas en lugar de volver a ejecutarlas, optimizando significativamente los tiempos de build.
 - **Comunidad**: Para obtener ayuda con Gradle, puedes hacer preguntas en el foro de Gradle, en el canal de Slack de la comunidad de Gradle o plantear problemas en el propio repositorio de Gradle. 
-- **Flexibilidad**: Usa 3 niveles de customización; un primero para el build donde se definen tareas, metodos y clases para reusarlas, un segundo para el projecto donde se logra reusar el codigo en múltiples subproyectos, y un tercero para publicar un plugin reusable como Maven.
+- **Flexibilidad**: Ofrece 3 niveles de personalización: uno para el build donde se definen tareas, métodos y clases para reutilizarlas; un segundo nivel a nivel de proyecto, permitiendo reutilizar código en múltiples subproyectos; y un tercero para la publicación de plugins reutilizables, similar a Maven.
 
 ---
 
