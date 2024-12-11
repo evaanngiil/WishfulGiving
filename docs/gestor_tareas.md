@@ -11,7 +11,7 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 ## Gestores de Tareas Evaluables
 
-### 2. Gradle
+### 1. Gradle
 
 - **Descripción**: [Gradle](https://gradle.org/) es un gestor de dependencias y de tareas diseñado para ofrecer alto rendimiento. Su configuración se puede definir en Groovy o Kotlin DSL (`build.gradle` o `build.gradle.kts`).
 
@@ -20,7 +20,7 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 ---
 
-### **2. Apache Ant**  
+### 2. Apache Ant
 - **Descripción**: [Ant](https://ant.apache.org/) es una herramienta clásica de automatización de tareas, basada en XML, que ofrece flexibilidad para construir, probar y desplegar proyectos Java.  
 
 - **Comunidad**: Apache Ant tiene una comunidad activa, aunque más pequeña que la de Maven o Gradle. Su soporte se ofrece principalmente a través de listas de correo, con una base de usuarios establecida, sobre todo en proyectos más antiguos. Si bien su ecosistema no crece con la misma velocidad que otros gestores, es bastante fiable y sólido para proyectos heredados. No tiene un canal como Slack o foros en tiempo real, lo que puede hacer más lento obtener ayuda.
