@@ -4,8 +4,9 @@ La automatización de tareas es fundamental para optimizar los flujos de trabajo
 ## Criterios de selección
 Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado los siguientes criterios:
 
-- *Comunidad*: Accesibilidad y disponibilidad de recursos de soporte, como foros oficiales, listas de correo, canales de comunicación como Slack o GitHub, y frecuencia de actualizaciones en la documentación oficial.
-- *Flexibilidad*:  Capacidad para adaptar y personalizar tareas a las necesidades específicas del proyecto. Se mide con número de niveles de personalización que ofrece cada herramienta, como la creación de nuevas tareas, modificación de procesos y reutilización de configuraciones.
+- *Integración*: La posibilidad de integrar el gestor de tareas con el sistema de gestión de dependencias y otras herramientas de construcción, facilitando la configuración y gestión de proyectos de manera centralizada en un único archivo o sistema.
+- *Personalización*:  Capacidad para personalizar tareas según las necesidades del proyecto. Este criterio se mide con el número de niveles de personalización que ofrece cada herramienta.
+- *Eficiencia*: El tiempo necesario para ejecutar tareas comunes en proyectos estándar, considerando la optimización de las tareas y la posibilidad de ejecutar solo las necesarias mediante caché o incrementos.
 
 ---
 
@@ -13,18 +14,20 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 ### 1. Gradle
 
-- **Descripción**: [Gradle](https://gradle.org/) es un gestor de dependencias y de tareas diseñado para ofrecer alto rendimiento. Su configuración se puede definir en Groovy o Kotlin DSL (`build.gradle` o `build.gradle.kts`).
+- **Descripción**: [Gradle](https://gradle.org/) es un gestor de dependencias y de tareas diseñado para ofrecer alto rendimiento. Utiliza un DSL basado en Groovy o Kotlin, lo que facilita la configuración tanto de las tareas como de las dependencias dentro del mismo archivo (`build.gradle` o `build.gradle.kts`).
 
-- **Comunidad**: Para obtener ayuda con Gradle, puedes hacer preguntas en el foro de Gradle, en el canal de Slack de la comunidad de Gradle o plantear problemas en el propio repositorio de Gradle. 
-- **Flexibilidad**: Ofrece 3 niveles de personalización: uno para el build donde se definen tareas, métodos y clases para reutilizarlas; un segundo nivel a nivel de proyecto, permitiendo reutilizar código en múltiples subproyectos; y un tercero para la publicación de plugins reutilizables, similar a Maven.
+- **Integración**: Gradle no solo actúa como un gestor de tareas, sino también como gestor de dependencias, lo que permite centralizar la configuración en un solo archivo, evitando la necesidad de mantener múltiples configuraciones separadas. Esto simplifica la gestión del proyecto y reduce la deuda técnica. 
+- **Personalización**: Ofrece 3 niveles de personalización: uno para el build donde se definen tareas, métodos y clases para reutilizarlas; un segundo nivel a nivel de proyecto, permitiendo reutilizar código en múltiples subproyectos; y un tercero para la publicación de plugins reutilizables, similar a Maven.
+- **Eficiencia**: Gradle es altamente eficiente gracias a su caché de tareas y ejecución incremental, lo que significa que no necesita volver a ejecutar tareas que ya se han ejecutado correctamente, mejorando significativamente los tiempos de ejecución.
 
 ---
 
 ### 2. Apache Ant
 - **Descripción**: [Ant](https://ant.apache.org/) es una herramienta clásica de automatización de tareas, basada en XML, que ofrece flexibilidad para construir, probar y desplegar proyectos Java.  
 
-- **Comunidad**: Apache Ant tiene una comunidad activa, aunque más pequeña que la de Maven o Gradle. Su soporte se ofrece principalmente a través de listas de correo, con una base de usuarios establecida, sobre todo en proyectos más antiguos. Si bien su ecosistema no crece con la misma velocidad que otros gestores, es bastante fiable y sólido para proyectos heredados. No tiene un canal como Slack o foros en tiempo real, lo que puede hacer más lento obtener ayuda.
-- **Flexibilidad**: Ant es conocido por su flexibilidad, ya que permite configurar tareas de manera muy detallada, aunque su configuración se realiza manualmente en XML. La alta personalización de Ant es uno de sus puntos fuertes, pero requiere más trabajo de configuración y mantenimiento, especialmente cuando se compara con herramientas como Gradle. Ant permite dos niveles de personalización
+- **Integración**: Ant se integra bien con Apache Ivy para gestionar dependencias, pero no tiene una integración tan fluida como Gradle, que centraliza tanto tareas como dependencias en un solo archivo.
+- **Personalización**: Ant es muy flexible, ya que permite personalizar las tareas a través de su archivo build.xml, pero requiere configuraciones manuales detalladas, lo que puede resultar más complicado a medida que el proyecto crece. Carece de un sistema de personalización tan robusto como Gradle.
+- **Eficiencia**: Aunque Ant es rápido, no soporta tareas incrementales de manera nativa, lo que significa que siempre vuelve a ejecutar todas las tareas en cada build, sin optimizar la ejecución.
 
 ---
 
@@ -33,23 +36,29 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 - **Descripción**: [Maven](https://maven.apache.org/) es un gestor de dependencias y de tareas cuyo fichero base sigue el estándar XML y está basado en el principio de "convención sobre configuración".
 
-- **Comunidad**: No es obvio a dónde dirigirse para recibir asistencia continua con Maven. No se pueden plantear problemas en el repositorio de GitHub y el canal de Slack es solo para colaboradores.
-- **Flexibilidad**: Maven ofrece un nivel principal de personalización a través de su archivo `pom.xml`, que permite configurar las tareas del proyecto de forma estructurada. Sin embargo, debido a su enfoque en la convención sobre configuración, las opciones de personalización son más limitadas en comparación con Gradle o Ant. Es posible escribir plugins personalizados, pero para ello se requiere crear y publicar un proyecto independiente.
+- **Integración**: Maven tiene una excelente integración con su propio sistema de gestión de dependencias, pero al igual que Ant, no centraliza tareas y dependencias en un solo archivo, lo que puede generar mayor deuda técnica.
+- **Personalización**: Maven ofrece un nivel principal de personalización a través de su archivo `pom.xml`, que permite configurar las tareas del proyecto de forma estructurada. Sin embargo, debido a su enfoque en la convención sobre configuración, las opciones de personalización son más limitadas en comparación con Gradle o Ant. Es posible escribir plugins personalizados, pero para ello se requiere crear y publicar un proyecto independiente.
+- **Eficiencia**: Maven no soporta tareas incrementales ni paralelización nativa, lo que lo hace más lento en proyectos grandes que Gradle.
 
 ---
 
 ### 4. Bazel
 - **Descripción**: [Bazel](https://bazel.build/) es un sistema de construcción y automatización desarrollado por Google, enfocado en la eficiencia y escalabilidad en proyectos grandes.  
  
-- **Comunidad**: El soporte oficial de Google es sólido, pero su comunidad en línea es limitada en comparación con las herramientas más establecidas. El soporte se centra principalmente en foros y GitHub, donde puedes plantear problemas.  
-- **Flexibilidad**: Ofrece 3 niveles de personalización.La herramienta está basada en un enfoque de “reglas”, lo que permite una personalización profunda de los procesos de construcción. Sin embargo, su adaptabilidad a proyectos exclusivamente en Java no es tan completa como la de Gradle o Maven.
+- **Integración**: Bazel es excelente para proyectos que requieren trabajar con múltiples lenguajes de programación, pero no está tan optimizado para entornos estrictamente Java, donde Gradle ofrece una mejor experiencia de integración. 
+- **Personalización**: Ofrece 3 niveles de personalización. Utiliza reglas para definir tareas personalizadas y permite una gran personalización a nivel de proyecto, pero su configuración inicial puede ser compleja. Carece de la simplitud y facilidad de uso que tiene Gradle a la hora de personalizar tareas para proyectos exclusivamente en Java.
+- **Eficiencia**: Bazel es muy eficiente en proyectos grandes gracias a su ejecución paralela y optimización de dependencias, pero requiere mayor configuración inicial para aprovechar todas sus capacidades.
+
+---
 
 ### 5. Make
-- **Descripción**: Make es una herramienta clásica de automatización de tareas utilizada principalmente en proyectos pequeños o medianos, ideal para tareas simples como compilación y procesamiento de archivos.
+- **Descripción**: [Make](https://www.gnu.org/software/make/manual/make.html) es una herramienta clásica de automatización de tareas utilizada principalmente en proyectos pequeños o medianos, ideal para tareas simples como compilación y procesamiento de archivos.
 
-- **Comunidad**: La comunidad de Make es estable, aunque menos activa que la de herramientas más modernas como Gradle o Maven. El soporte se realiza a través de foros, listas de correo y la documentación oficial, que es bastante completa pero carece de canales de soporte en tiempo real como Slack.
+- **Integración**: Make carece de una integración directa con sistemas de gestión de dependencias como Maven o Gradle, lo que requiere la configuración manual de estas dependencias. Sin embargo, puede integrarse con otros scripts y herramientas de construcción, aunque no de manera tan fluida como Gradle. Esto hace que Make sea más adecuado para proyectos pequeños o específicos en los que la gestión de dependencias no sea un requisito importante.
 
-- **Flexibilidad**: Make ofrece gran flexibilidad para tareas simples, pero su configuración mediante Makefile puede volverse compleja en proyectos grandes. No tiene una estructura prediseñada como Maven o Gradle, lo que puede hacer que la personalización sea más difícil a medida que el proyecto crece. Make permite personalizar las tareas a través de su sintaxis, pero carece de los niveles de personalización avanzados.
+- **Personalización**: Make permite definir tareas completamente personalizadas mediante reglas específicas en el `Makefile`. Sin embargo, no tiene niveles avanzados de personalización como Gradle, ya que carece de una estructura que facilite la reutilización o configuración compartida en subproyectos.
+
+- **Eficiencia**: Make es eficiente para tareas simples y repetitivas, ya que solo ejecuta las tareas necesarias si detecta cambios en los archivos relacionados. Sin embargo, no ofrece soporte nativo para ejecución incremental o paralelización como Gradle, lo que puede limitar su eficiencia en proyectos grandes o complejos.
 
 ---
 
@@ -57,6 +66,6 @@ Para elegir el gestor de tareas para nuestro proyecto en Java, hemos considerado
 
 ### Gestor Seleccionado: *Gradle*
 
-Gradle se destaca por su comunidad activa y flexibilidad, permitiendo la configuración rápida y la personalización avanzada a través de su DSL moderno. Su capacidad de adaptación a proyectos complejos, junto con el soporte para builds incrementales y tareas paralelizadas, lo convierte en la mejor opción para proyectos Java de gran escala. Aunque herramientas como Ant y Bazel también ofrecen flexibilidad, Gradle proporciona el mejor balance de rendimiento y soporte para los proyectos en Java que buscamos desarrollar.
+Gradle se adapta mejor a los objetivos del proyecto debido a su capacidad para gestionar tareas y dependencias de manera integrada, minimizar la deuda técnica con configuraciones simplificadas y escalables, y garantizar un flujo de trabajo eficiente y sostenible. Gradle proporciona un balance óptimo entre simplicidad y capacidad técnica para proyectos Java de gran escala.
 
 ---
