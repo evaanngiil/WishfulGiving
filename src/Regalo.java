@@ -4,7 +4,7 @@ public class Regalo {
     private final double precio;
     private final int prioridad;
 
-    public Regalo(String titulo, String descripcion, double precio, int prioridad;) {
+    public Regalo(String titulo, String descripcion, double precio, int prioridad) {
         if (titulo == null || titulo.isEmpty()) {
             throw new IllegalArgumentException("El titulo del regalo no puede estar vacío.");
         }
