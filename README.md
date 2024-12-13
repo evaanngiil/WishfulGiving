@@ -39,8 +39,12 @@ Soy un desarrollador que enfrenta dificultades a la hora de hacer regalos person
 - [User Journeys](docs/user_journeys.md)
 - [Historias de usuario](docs/user_stories.md)
 - [Milestones](docs/milestone.md)
-- [Gestor de dependencias](docs/gestor_dependencias.md)
-- [Gestor de tareas](docs/gestor_tareas.md)
+
+# Elección del gestor de dependencias y tareas
+
+Para elegir el gestor de dependencias se ha tenido en cuenta una serie de criterios detallados en [este archivo](docs/gestor_dependencias.md). Donde se llega a la conclusión de que Gradle es la mejor opción.
+
+Así mismo se detalla [aquí](docs/gestor_tareas.md) los criterios en los que me he basado para elegir Gradle como gestor de tareas.
 
 
 
