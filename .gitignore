@@ -1,1 +1,5 @@
-ideas.txt
+# Archivos del gestor de dependencias y tareas
+.gradle
+gradle
+gradlew*
+build

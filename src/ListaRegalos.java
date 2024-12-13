@@ -9,7 +9,7 @@ public class ListaRegalos {
         if (destinatario == null || destinatario.isEmpty()) {
             throw new IllegalArgumentException("El nombre del destinatario no puede estar vacío.");
         }
-        if (presupuestoTotal < 0) {
+        if (presupuesto < 0) {
             throw new IllegalArgumentException("El presupuesto debe ser un valor positivo.");
         }
         this.destinatario = destinatario;

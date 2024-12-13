@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version = '1.0.0'
+description = 'Lista de deseos compartida para cumpleaños'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+tasks.named('check').configure {
+    dependsOn.clear()
+    dependsOn compileJava
+    finalizedBy clean
+}
