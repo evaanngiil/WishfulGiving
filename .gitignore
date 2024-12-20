@@ -3,3 +3,6 @@
 gradle
 gradlew*
 build
+
+# Archivos de compilación
+bin
