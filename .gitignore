@@ -6,3 +6,6 @@ build
 
 # Archivos de compilación
 bin
+.vscode
+nbproject
+WishfulGiving
