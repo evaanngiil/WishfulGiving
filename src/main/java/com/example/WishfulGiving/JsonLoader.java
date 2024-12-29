@@ -5,6 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ * Clase encargada de cargar datos desde archivos JSON y convertirlos en objetos Java.
+ * Utiliza la biblioteca Jackson: https://github.com/FasterXML/jackson
+ */
+
 public class JsonLoader {
 
     public static List<ListaRegalos> cargarListasDeRegalos(String rutaArchivo) {
