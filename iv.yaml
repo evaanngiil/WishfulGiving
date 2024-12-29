@@ -1,7 +1,7 @@
 lenguaje: java
-entidad: src/gestor_de_usuarios.java
+entidad: src/GestorListaRegalos.java
 automatizar:
   fichero: build.gradle
   # El contenedor de Gradle significa se puede clonar un repositorio y crear el proyecto de inmediato sin instalar Gradle. Esto también hace que Gradle sea más fácil de usar en servidores de integración continua. Para ello se necesita usar el ejecutable de, es decir ./gradlew.
   orden: "./gradlew"
-test: src/test/java/com/example/wishful_giving/lista_regalos_test.java
+test: src/test/java/com/example/WishfulGiving/ListaRegaloTest.java
