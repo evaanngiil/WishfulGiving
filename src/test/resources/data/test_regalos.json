@@ -1,0 +1,19 @@
+[
+  {
+    "destinatario": "Juan",
+    "presupuesto": 100.0,
+    "regalos": [
+      { "titulo": "Libro", "descripcion": "Un libro sobre Testing en Java super intersante que en algun lugar de la mancha", "precio": 20.0, "prioridad": 3 },
+      { "titulo": "Monopoly 64 peones", "descripcion": "Monopoly con destacados de oro y plata y con hasta 64 peones", "precio": 70.0, "prioridad": 4 },
+      { "titulo": "Enter de peluche", "descripcion": "Un enter de peluche enorme para desahogarme cuando me estreso haciendo código", "precio": 20.0, "prioridad": 5 }
+    ]
+  },
+  {
+    "destinatario": "Ana",
+    "presupuesto": 50.0,
+    "regalos": [
+      { "titulo": "Caja de Chocolates", "descripcion": "Chocolates premium", "precio": 25.0, "prioridad": 3 },
+      { "titulo": "Vela Aromática", "descripcion": "Aroma relajante pa estudia", "precio": 15.0, "prioridad": 4 }
+    ]
+  }
+]
