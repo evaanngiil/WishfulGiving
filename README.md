@@ -51,4 +51,4 @@ Así mismo se detalla [aquí](docs/gestor_tareas.md) los criterios en los que me
 En [este](docs/testing_aserciones.md) documento se detallan los motivos que me ha llevado a elegir `JUnit 5` como biblioteca de aserciones. 
 
 Además, en este [otro](docs/testing_testrunner.md) encontrarás los criterios utilizados para elegir a `JUnit 5` como test-runner y a `Gradle`como herramienta CLI.
-
+Para poder ejecutar los tests con la herramienta CLI debemos ejecutar el comando `./gradlew test`
