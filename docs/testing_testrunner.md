@@ -1,6 +1,6 @@
 # Testing en Java: Test runners
 
-El test runner es fundamental para ejecutar y organizar los tests que verifican la calidad de un software como se expresa en #29. En Java, existen varios frameworks que se pueden utilizar para realizar tests. Elegiremos uno de ellos basándonos en los mismos criterios que utilizamos para elegir la [biblioteca de aserciones](testing_aserciones.md). (Evitar dependencias externas, mantenimiento activo y capacidad de integrarse con herramientas CLI).
+El test runner es fundamental para ejecutar y organizar los tests que verifican la calidad de un software como se expresa en #29. En Java, existen varios frameworks que se pueden utilizar para realizar tests. Elegiremos uno de ellos basándonos en los mismos criterios comunes que utilizamos para elegir la [biblioteca de aserciones](testing_aserciones.md) destacados en #25. (Evitar dependencias externas, mantenimiento activo y capacidad de integrarse con herramientas CLI).
 
 ### Estándar - [JUnit 5](https://github.com/junit-team/junit5)
 
