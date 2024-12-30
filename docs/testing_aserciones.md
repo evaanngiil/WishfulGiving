@@ -1,28 +1,27 @@
-# Testing en Java
-## Aserciones
+# Testing en Java - Aserciones
+
+## Criterios comunes
 
 Para elegir la biblioteca de aserciones en Java, se han considerado los siguientes criterios principales:
 
-- **Evitar dependencias innecesarias**: Siempre que las opciones nativas sean suficientemente robustas para cubrir nuestras necesidades, no se añadirán bibliotecas externas.
+- Evitar la dependencia de liberías externas. Es decir, se priorizan herramientas nativas o ampliamente adoptadas en el ecosistema estándar de Java para reducir la complejidad y la deuda técnica.
 
-- **Claridad en los mensajes de fallo**: Las aserciones deben ofrecer mensajes predeterminados claros y permitir la personalización de mensajes cuando sea necesario.
+- Se consideran herramientas con métricas objetivas de mantenimiento, tales como actividad reciente en el repositorio (commits en el último año), volumen de contribuciones y número de versiones estables lanzadas en el último año.
 
-Java cuenta con un sistema de aserciones integrado en su estándar a través de la biblioteca [JUnit 5](https://junit.org/junit5/), que ofrece un amplio rango de métodos de aserción. Estos métodos son suficientemente flexibles para satisfacer las necesidades comunes de pruebas unitarias sin necesidad de bibliotecas externas.
+- Deben integrarse fácilmente con sistemas como Maven o Gradle, incluyendo soporte nativo para configuración y ejecución de pruebas.
 
-### Caracterísiticas de las Aserciones en JUnit 5.
+## Selección de Biblioteca de Aserciones
 
-JUnit 5 proporciona un robusto conjunto de herramientas para realizar aserciones en pruebas unitarias, cubriendo las necesidades más comunes de los desarrolladores sin requerir bibliotecas adicionales. Entre sus capacidades más destacadas, encontramos métodos para verificar igualdad y desigualdad, como `assertEquals` y `assertNotEquals`, que comparan valores esperados y actuales para asegurar que coincidan o difieran según lo esperado. También permite comprobar condiciones booleanas con métodos como `assertTrue` y `assertFalse`, y verificar si un objeto es nulo o no mediante `assertNull` y `assertNotNull`.
+Java no proporciona un sistema robusto de aserciones más allá del uso básico de assert. Por ello, se consideran bibliotecas externas que complementen las necesidades del desarrollo moderno.
 
-Una de las características más útiles de las aserciones en JUnit 5 es la posibilidad de añadir mensajes personalizados. Esto permite que, en caso de fallo, los mensajes sean claros y específicos, facilitando la identificación y resolución de problemas durante la ejecución de las pruebas. La flexibilidad de los mensajes personalizados contribuye significativamente a la eficiencia en la depuración.
+### Opciones de Bibliotecas de Aserciones:
 
-En escenarios donde se deben verificar múltiples condiciones relacionadas, JUnit 5 introduce la funcionalidad de aserciones compuestas mediante el método `assertAll` que permite agrupar múltiples aserciones en un único bloque, útil para validar diferentes aspectos de un mismo caso de prueba sin detenerse en el primer fallo. Por otro lado, el método `assertThrows` es ideal para pruebas que necesitan verificar que un bloque de código lanza una excepción esperada, permitiendo evaluar casos excepcionales de manera controlada.
+- **[JUnit 5](https://github.com/junit-team/junit5)** se destaca como una biblioteca de aserciones integrada con su test runner estándar. De acuerdo con su repositorio oficial en *GitHub*, ha recibido actualizaciones recientes (al menos dos commits en el último trimestre) y su última versión estable fue lanzada en el último año. Ofrece métodos como `assertEquals`, `assertTrue` y `assertThrows`, cubriendo la mayoría de los casos comunes. Su integración con Maven y Gradle garantiza compatibilidad sin necesidad de configuraciones adicionales.
 
-Además, JUnit 5 simplifica la comparación de colecciones y flujos de datos con métodos como `assertIterableEquals`. Esto resulta particularmente útil al trabajar con datos estructurados o en pruebas que involucren grandes volúmenes de información. Estas capacidades hacen que JUnit 5 sea una herramienta completa y suficiente para abordar la mayoría de los casos de prueba en proyectos Java, sin necesidad de recurrir a bibliotecas externas.
+- **[AssertJ](https://assertj.github.io/doc)**, por otro lado, proporciona una API fluida que permite escribir pruebas altamente legibles, especialmente útil para objetos complejos. Sin embargo, según las métricas de actividad en su repositorio oficial, tiene menos actualizaciones recientes en comparación con JUnit 5. Requiere instalación adicional y podría introducir dependencias innecesarias en proyectos simples.
 
-## Bibliotecas Externas
-
-Existen también bibliotecas externas que buscan ampliar las capacidades de JUnit. `AssertJ`, por ejemplo, ofrece una API fluida y más legible para realizar aserciones en colecciones y objetos complejos. Otra opción popular es `Hamcrest`, que utiliza combinadores de emparejamiento (`Matchers`) para escribir pruebas más expresivas. Aunque estas bibliotecas pueden ser útiles en ciertos casos, su uso no es estrictamente necesario si las aserciones nativas de JUnit cubren los requisitos del proyecto.
+- **[Hamcrest](https://github.com/hamcrest/JavaHamcrest)** es conocida por sus `Matchers` que permiten escribir pruebas expresivas. Sin embargo, las estadísticas de *GitHub* indican que su repositorio principal ha tenido menos actividad reciente y su última versión estable data de hace más de un año, lo que podría afectar su mantenimiento a largo plazo.
 
 ## Elección de Biblioteca de Aserciones
 
-Dado que el proyecto no requiere pruebas extremadamente complejas y JUnit 5 ya ofrece un cojunto robusto de herramientas, no se añadirán bibliotecas adicionales para evitar aumentar la deuda técnica. Esta decisión se basa en que las capacidades de JUnit 5 son suficientes para garantizar claridad y eficacia en las pruebas, manteniendo el projecto simple y fácil de mantener.
+Se selecciona **JUnit 5** como biblioteca de aserciones debido a su integración nativa con herramientas estándar, su mantenimiento activo y su flexibilidad, cumpliendo con los criterios de evitar dependencias adicionales y garantizar la compatibilidad con el ecosistema de Java.
