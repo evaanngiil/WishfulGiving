@@ -9,6 +9,10 @@ public class Regalo {
     private double precio;
     private int prioridad;
     
+    private static final int PRIORIDAD_MAX = 5;
+    private static final int PRIORIDAD_MIN = 1;
+    private static final int PRECIO_MIN = 0;
+    
     // Constructor por defecto para Jackson (instanciar objeto con JSON)
     public Regalo() {}
     
@@ -23,12 +27,11 @@ public class Regalo {
         if (descripcion == null || descripcion.isEmpty()) {
             throw new IllegalArgumentException("La descripcion del regalo no puede estar vacía.");
         }
-        if (precio < 0) {
+        if (precio < PRECIO_MIN) {
             throw new IllegalArgumentException("El precio del regalo debe ser un valor positivo.");
         }
-        if (prioridad < 1 || prioridad > 5) {
-                throw new IllegalArgumentException("La prioridad debe estar entre 1 y 5.");
-        }
+        if (prioridad < PRIORIDAD_MIN || prioridad > PRIORIDAD_MAX) {
+            throw new IllegalArgumentException("La prioridad debe estar entre " + PRIORIDAD_MIN + " y " + PRIORIDAD_MAX + ".");        }
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
