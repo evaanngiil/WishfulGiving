@@ -1,4 +1,4 @@
-package com.example.WishfulGiving;
+package WishfulGiving;
 
 import java.util.HashMap;
 

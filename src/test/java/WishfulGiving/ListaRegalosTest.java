@@ -1,5 +1,8 @@
-package com.example.WishfulGiving;
+package WishfulGiving;
 
+import WishfulGiving.JsonLoader;
+import WishfulGiving.Regalo;
+import WishfulGiving.ListaRegalos;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

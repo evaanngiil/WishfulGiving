@@ -1,4 +1,4 @@
-package com.example.WishfulGiving;
+package WishfulGiving;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
