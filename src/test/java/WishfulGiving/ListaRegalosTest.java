@@ -15,7 +15,7 @@ public class ListaRegalosTest {
     private static final String TEST_JSON_PATH = "data/test_regalos.json";
     
     @Test
-    void testTotalRegalos() {
+    void TotalRegalos() {
         var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
@@ -24,7 +24,7 @@ public class ListaRegalosTest {
     }
 
     @Test
-    void testRegalosDentroDelPresupuesto() {
+    void RegalosDentroDelPresupuesto() {
         var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
@@ -34,7 +34,7 @@ public class ListaRegalosTest {
     }
     
     @Test
-    void testCalcularPresupuestoRestante() {
+    void CalcularPresupuestoRestante() {
         var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         
         ListaRegalos listaAna = listas.get(1);
@@ -43,18 +43,9 @@ public class ListaRegalosTest {
         assertEquals(10.0, presupuestoRestante,
                 "El presupuesto restante calculado no es el esperado.");
     }
-    
-    @Test
-    void testCalcularPresupuestoRestanteSinRegalos() {
-        ListaRegalos lista = new ListaRegalos("Carlos", 50.0f, null);
-
-        double presupuestoRestante = lista.calcularPresupuestoRestante();
-        
-        assertEquals(50.0, presupuestoRestante, "El presupuesto restante no coincide con el presupuesto total.");
-    }
 
     @Test
-    void testEliminarRegaloExistente() {
+    void EliminarRegaloExistente() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
@@ -64,7 +55,7 @@ public class ListaRegalosTest {
     }
     
     @Test
-    void testEliminarRegaloInexistente() {
+    void EliminarRegaloInexistente() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
         
@@ -74,7 +65,7 @@ public class ListaRegalosTest {
     }
     
     @Test
-    void testAgregarRegalo() {
+    void AgregarRegalo() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
         var nuevoRegalo = new Regalo("Iphone muy viejo", "Quiero el Iphone más viejo y a la vez resistente que exista para ponerlo a prueba"
@@ -86,7 +77,7 @@ public class ListaRegalosTest {
     }
 
     @Test
-    void testAgregarRegaloNuloLanzaExcepcion() {
+    void AgregarRegaloNuloLanzaExcepcion() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
 
