@@ -8,15 +8,11 @@ JUnit 5 es el estándar en Java para la ejecución de pruebas. Según su reposit
 
 ### [TestNG](https://github.com/testng-team/testng)
 
-Destaca por su capacidad para manejar dependencias entre pruebas y ejecutar *suites* (conjuntos de tests agrupados) de manera jerárquica. Sin embargo, según las métricas de *GitHub*, tiene una actividad algo menor en comparación con JUnit y podría no ajustarse a proyectos estándar debido a su complejidad adicional.
+Aunque popular, su adopción ha disminuido frente a JUnit 5..  Según las métricas de *GitHub*, tiene una actividad algo menor en comparación con JUnit y podría no ajustarse a proyectos estándar debido a su complejidad adicional. Compatible con Maven y Gradle, pero requiere configuraciones adicionales para aprovechar funcionalidades avanzadas. Como son las dependencias explícitas entre pruebas (JUnit no lo soporta) y ejecución de *suites* jerárquicas . 
 
 ### [Spock](https://github.com/spockframework/spock)
 
-Spock es un framework basado en *Groovy* que combina pruebas unitarias, funcionales y de comportamiento (BDD) en un único enfoque. Su sintaxis concisa y expresiva permite escribir pruebas de manera clara y legible. Aunque es compatible con JUnit, su uso está más orientado a proyectos que aprovechan Groovy, lo que puede no ser adecuado para proyectos estrictamente en Java.
-
-### [Arquillian](https://github.com/arquillian)
-
-Arquillian está diseñado para pruebas de integración en aplicaciones *Java EE* o *Jakarta EE*. Permite ejecutar pruebas dentro de contenedores reales, como *WildFly* o *GlassFish*, simulando entornos de producción. Esto lo hace ideal para pruebas end-to-end en proyectos complejos, pero no es práctico para pruebas unitarias simples o proyectos que no requieren interacción con contenedores.
+Su uso está enfocado en proyectos que utilizannel lenguaje Groovy, lo que lo hace menos adecuado para Java puro. Cuenta con una actividad al nivel de JUnit 5 en *GitHub*, con versiones recientes lanzadas. Pero no cumple completamente con el criterio de integración, ya que su dependencia de Groovy y la configuración adicional necesaria en Maven o Gradle lo hacen menos práctico para proyectos Java puro.
 
 # Herramientas CLI
 
@@ -26,4 +22,6 @@ Gradle permite ejecutar tests con el comando `gradle test`, que utiliza por defe
 
 # Elección de test runner
 
-Se elige **JUnit 5** como test runner principal por su simplicidad, soporte nativo en el ecosistema Java, mantenimiento activo y capacidad de satisfacer los requisitos comunes de pruebas. Para escenarios específicos, como pruebas de integración complejas, se podrían considerar opciones adicionales como Arquillian
+Se elige **JUnit 5** como test runner principal por su simplicidad, soporte nativo en el ecosistema Java, mantenimiento activo y capacidad de satisfacer los requisitos comunes de pruebas. Para escenarios específicos, como pruebas de integración complejas, se podrían considerar opciones adicionales como Arquillian. 
+
+Para ejecutar los tests con la herramienta CLI elegida debemos ejecutar el comando `./gradlew test`. Este comando utiliza el wrapper de Gradle para ejecutar los tests con JUnit 5.
