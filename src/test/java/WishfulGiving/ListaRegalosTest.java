@@ -1,8 +1,5 @@
 package WishfulGiving;
 
-import WishfulGiving.JsonLoader;
-import WishfulGiving.Regalo;
-import WishfulGiving.ListaRegalos;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +12,7 @@ public class ListaRegalosTest {
     private static final String TEST_JSON_PATH = "data/test_regalos.json";
     
     @Test
-    void TotalRegalos() {
+    void totalRegalos() {
         var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
@@ -24,17 +21,27 @@ public class ListaRegalosTest {
     }
 
     @Test
-    void RegalosDentroDelPresupuesto() {
-        var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
+    void obtenerRegalosDentroDelPresupuesto() {
+        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
         List<Regalo> regalosSeleccionados = listaJuan.obtenerRegalosDentroPresupuesto();
-        assertEquals(REGALOS_DENTRO_PRESUPUESTO, regalosSeleccionados.size(),
-                "El número de regalos dentro del presupuesto no coincide con el esperado.");
+
+        List<Regalo> regalosEsperados = List.of(
+                new Regalo("Enter de peluche", "Un enter de peluche enorme para desahogarme cuando me estreso haciendo código", 20.0, 5),
+                new Regalo("Libro", "Un libro sobre Testing en Java super intersante que en algun lugar de la mancha", 20.0, 3)
+        );
+
+        boolean sonIguales = regalosEsperados.size() == regalosSeleccionados.size()
+                && regalosEsperados.stream().allMatch(esperado
+                        -> regalosSeleccionados.stream().anyMatch(seleccionado
+                        -> seleccionado.getTitulo().equals(esperado.getTitulo())));
+
+        assertTrue(sonIguales, "Los regalos seleccionados no coinciden exactamente con los regalos esperados.");
     }
     
     @Test
-    void CalcularPresupuestoRestante() {
+    void calcularPresupuestoRestante() {
         var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         
         ListaRegalos listaAna = listas.get(1);
@@ -45,7 +52,7 @@ public class ListaRegalosTest {
     }
 
     @Test
-    void EliminarRegaloExistente() {
+    void eliminarRegaloExistente() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
@@ -55,7 +62,7 @@ public class ListaRegalosTest {
     }
     
     @Test
-    void EliminarRegaloInexistente() {
+    void eliminarRegaloInexistente() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
         
@@ -65,7 +72,7 @@ public class ListaRegalosTest {
     }
     
     @Test
-    void AgregarRegalo() {
+    void agregarRegalo() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
         var nuevoRegalo = new Regalo("Iphone muy viejo", "Quiero el Iphone más viejo y a la vez resistente que exista para ponerlo a prueba"
@@ -77,7 +84,7 @@ public class ListaRegalosTest {
     }
 
     @Test
-    void AgregarRegaloNuloLanzaExcepcion() {
+    void agregarRegaloNuloLanzaExcepcion() {
         List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
         ListaRegalos lista = listas.get(0);
 
