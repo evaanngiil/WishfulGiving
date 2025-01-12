@@ -37,6 +37,14 @@ public class Regalo {
         this.precio = precio;
         this.prioridad = prioridad;
     }
+    
+    /**
+     * Calcula la relación entre la prioridad y el precio del regalo.
+     * @return Relación prioridad/precio.
+     */
+    public double getRelacionPrioridadPrecio() {
+        return prioridad / precio;
+    }
 
     public String getTitulo() {
         return titulo;
