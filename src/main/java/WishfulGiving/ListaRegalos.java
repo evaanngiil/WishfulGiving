@@ -65,25 +65,28 @@ public class ListaRegalos {
     }
     
     /**
-     * Obtiene la lista de regalos dentro del presupuesto, ordenada por prioridad.
-     * @return Lista de regalos priorizados dentro del presupuesto.
+     * Obtiene la lista de regalos que maximiza la satisfacción dentro del presupuesto disponible.
+     * @return Lista de regalos seleccionados para maximizar la satisfacción.
      */
-    
-    public List<Regalo> obtenerRegalosDentroPresupuesto(){
-        List<Regalo> regalosFiltrados = new ArrayList <>();
-        
+    public List<Regalo> obtenerRegalosDentroPresupuesto() {
+        // Ordenar los regalos por relación prioridad/precio de forma descendente.
+        List<Regalo> regalosOrdenados = regalos.stream()
+                .sorted(Comparator.comparingDouble(Regalo::getRelacionPrioridadPrecio).reversed())
+                .toList();
+
+        List<Regalo> regalosSeleccionados = new ArrayList<>();
         double presupuestoRestante = presupuesto;
-        for (Regalo regalo : regalos.stream()
-                                    .sorted(Comparator.comparingInt(Regalo::getPrioridad).reversed())
-                                    .toList()) {
+
+        for (Regalo regalo : regalosOrdenados) {
             if (regalo.getPrecio() <= presupuestoRestante) {
-                regalosFiltrados.add(regalo);
+                regalosSeleccionados.add(regalo);
                 presupuestoRestante -= regalo.getPrecio();
             }
         }
-        
-        return regalosFiltrados;
+
+        return regalosSeleccionados;
     }
+
     
     /**
      * Devuelve el total de regalos en la lista.
