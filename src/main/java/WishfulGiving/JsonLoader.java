@@ -20,7 +20,8 @@ public class JsonLoader {
             }
             return List.of(mapper.readValue(inputStream, ListaRegalos[].class));
         } catch (Exception e) {
-            throw new RuntimeException("Error al leer el archivo JSON: " + e.getMessage(), e);
+                    throw new RuntimeException("Error al leer el archivo JSON: " + rutaArchivoJson + " - " + e.getMessage(), e);
+;
         }
     }
 }
