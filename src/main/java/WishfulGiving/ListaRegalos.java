@@ -32,29 +32,6 @@ public class ListaRegalos {
         this.regalos = regalos != null ? new ArrayList<>(regalos) : new ArrayList<>();
     }
 
-    public String getDestinatario() {
-        return destinatario;
-    }
-
-    public float getPresupuesto() {
-        return presupuesto;
-    }
-
-    public List<Regalo> getRegalos() {
-        return new ArrayList<>(regalos);
-    }
-
-    
-    /**
-     * Agrega un regalo a la lista de regalos.
-     * @param regalo el regalo que se desea agregar.
-     */
-    
-    public void agregarRegalo (Regalo regalo) {
-        if (regalo == null) throw new IllegalArgumentException("El regalo no puede ser nulo");
-        regalos.add(regalo);
-    }
-    
     /**
      * Elimina un regalo de la lista de regalos
      * @param titulo El título del regalo que se desea eliminar.
@@ -69,7 +46,6 @@ public class ListaRegalos {
      * @return Lista de regalos seleccionados para maximizar la satisfacción.
      */
     public List<Regalo> obtenerRegalosDentroPresupuesto() {
-        // Ordenar los regalos por relación prioridad/precio de forma descendente.
         List<Regalo> regalosOrdenados = regalos.stream()
                 .sorted(Comparator.comparingDouble(Regalo::getRelacionPrioridadPrecio).reversed())
                 .toList();
