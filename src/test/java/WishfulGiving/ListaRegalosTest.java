@@ -7,18 +7,8 @@ import java.util.List;
 
 public class ListaRegalosTest {
     
-    private static final int TOTAL_REGALOS_ESPERADOS = 3;
     private static final int REGALOS_DENTRO_PRESUPUESTO = 2;
     private static final String TEST_JSON_PATH = "data/test_regalos.json";
-    
-    @Test
-    void totalRegalos() {
-        var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        ListaRegalos listaJuan = listas.get(0);
-
-        assertEquals(TOTAL_REGALOS_ESPERADOS, listaJuan.totalRegalos(),
-                "El total de regalos no coincide con el esperado.");
-    }
 
     @Test
     void obtenerRegalosDentroDelPresupuesto() {
@@ -51,23 +41,4 @@ public class ListaRegalosTest {
                 "El presupuesto restante calculado no es el esperado.");
     }
 
-    @Test
-    void eliminarRegaloExistente() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        ListaRegalos listaJuan = listas.get(0);
-
-        boolean eliminado = listaJuan.eliminarRegalo("Monopoly 64 peones");
-        assertTrue(eliminado,
-                "No se ha eliminado el regalo como se esperaba");
-    }
-    
-    @Test
-    void eliminarRegaloInexistente() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        ListaRegalos lista = listas.get(0);
-        
-        boolean eliminado = lista.eliminarRegalo("Regalo Inexistente");
-        
-        assertFalse(eliminado, "Se devolvió true al intentar eliminar un regalo inexistente.");
-    }
     

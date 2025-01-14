@@ -31,15 +31,6 @@ public class ListaRegalos {
         this.presupuesto = presupuesto;
         this.regalos = regalos != null ? new ArrayList<>(regalos) : new ArrayList<>();
     }
-
-    /**
-     * Elimina un regalo de la lista de regalos
-     * @param titulo El título del regalo que se desea eliminar.
-     * @return true si eliminó el regalo, falso si no se encontró.
-     */
-    public boolean eliminarRegalo (String titulo){
-        return regalos.removeIf(regalo -> regalo.getTitulo().equalsIgnoreCase(titulo));
-    }
     
     /**
      * Obtiene la lista de regalos que maximiza la satisfacción dentro del presupuesto disponible.
@@ -77,15 +68,6 @@ public class ListaRegalos {
         }
 
         return regalosSeleccionados;
-    }
-
-    
-    /**
-     * Devuelve el total de regalos en la lista.
-     * @return Cantidad de regalos en la lista.
-     */
-    public int totalRegalos(){
-        return regalos.size();
     }
     
     /**
