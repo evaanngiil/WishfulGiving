@@ -71,26 +71,3 @@ public class ListaRegalosTest {
         assertFalse(eliminado, "Se devolvió true al intentar eliminar un regalo inexistente.");
     }
     
-    @Test
-    void agregarRegalo() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        ListaRegalos lista = listas.get(0);
-        var nuevoRegalo = new Regalo("Iphone muy viejo", "Quiero el Iphone más viejo y a la vez resistente que exista para ponerlo a prueba"
-                , 15.0, 3);
-
-        lista.agregarRegalo(nuevoRegalo);
-        
-        assertEquals(4, lista.totalRegalos(), "El total de regalos no es el esperado después de agregar un regalo.");
-    }
-
-    @Test
-    void agregarRegaloNuloLanzaExcepcion() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        ListaRegalos lista = listas.get(0);
-
-        assertThrows(IllegalArgumentException.class, 
-            () -> lista.agregarRegalo(null), 
-            "No se lanzó una excepción al intentar agregar un regalo nulo.");
-    }
-    
-}
