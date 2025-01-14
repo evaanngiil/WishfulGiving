@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -82,4 +81,3 @@ public class ListaRegalos {
         return presupuesto - totalGastado;
     }
 }
-
