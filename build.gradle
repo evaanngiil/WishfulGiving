@@ -17,9 +17,6 @@ dependencies {
     // Plataforma de pruebas JUnit
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
 
-    // Biblioteca Guava
-    implementation 'com.google.guava:guava:32.1.2-jre'
-
     // Jackson para manejo de JSON
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
