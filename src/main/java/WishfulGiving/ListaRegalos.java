@@ -46,17 +46,33 @@ public class ListaRegalos {
      * @return Lista de regalos seleccionados para maximizar la satisfacción.
      */
     public List<Regalo> obtenerRegalosDentroPresupuesto() {
-        List<Regalo> regalosOrdenados = regalos.stream()
-                .sorted(Comparator.comparingDouble(Regalo::getRelacionPrioridadPrecio).reversed())
-                .toList();
+        int n = regalos.size();
+        int capacidad = (int) presupuesto;
+
+        int [][] dp = new int [n + 1][capacidad + 1];
+        
+        for (int i = 1; i<= n; i++) {
+            Regalo regalo = regalos.get(i-1);
+            int peso = (int) regalo.getPrecio();
+            int valor = regalo.getPrioridad();
+
+            for (int j = 0; j <= capacidad; j++) {
+                if (peso <= j) {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-peso] + valor);
+                } else {
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
 
         List<Regalo> regalosSeleccionados = new ArrayList<>();
-        double presupuestoRestante = presupuesto;
+        int w = capacidad;
 
-        for (Regalo regalo : regalosOrdenados) {
-            if (regalo.getPrecio() <= presupuestoRestante) {
+        for (int i = n; i > 0 && w > 0; i--) {
+            if (dp[i][w] != dp[i-1][w]) {
+                Regalo regalo = regalos.get(i-1);
                 regalosSeleccionados.add(regalo);
-                presupuestoRestante -= regalo.getPrecio();
+                w -= regalo.getPrecio();
             }
         }
 
