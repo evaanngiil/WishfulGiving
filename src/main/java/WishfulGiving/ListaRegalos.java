@@ -118,15 +118,4 @@ public class ListaRegalos {
     return listas;
 }
 
-    public String getDestinatario() {
-        return destinatario;
-    }
-
-    public float getPresupuesto() {
-        return presupuesto;
-    }
-
-    public List<Regalo> getRegalos() {
-        return regalos;
-    }
 }
