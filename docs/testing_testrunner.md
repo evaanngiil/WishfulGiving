@@ -2,6 +2,8 @@
 
 El test runner es fundamental para ejecutar y organizar los tests que verifican la calidad de un software como se expresa en #29. En Java, existen varios frameworks que se pueden utilizar para realizar tests. Elegiremos uno de ellos basándonos en los mismos criterios comunes que utilizamos para elegir la [biblioteca de aserciones](testing_aserciones.md) destacados en #25. (Evitar dependencias externas, mantenimiento activo y capacidad de integrarse con herramientas CLI).
 
+Además, añadiremos un nuevo criterio de elección: 4. **Características avanzadas**. Considerar características como paralelización, dependencias entre tests y suites jerárquicas para optimizar tiempos y estructuras complejas. 
+
 Es importante diferenciar entre un framework de testing (como JUnit) y un motor de pruebas (Test Engine). El framework proporciona la estructura para escribir las pruebas (anotaciones, aserciones), mientras que el motor de pruebas es el responsable de descubrir y ejecutar las pruebas.
 
 ### Estándar - [JUnit 5](https://github.com/junit-team/junit5)
@@ -14,15 +16,16 @@ JUnit se compone de tres submódulos:
 - **JUnit Jupiter**: Es el nuevo modelo de programación para escribir tests en JUnit 5. Incluye las nuevas anotaciones (`@Test`,` @BeforeEach`, `@AfterEach`, etc.) y el motor de pruebas que las ejecuta.
 - **JUnit Vintage**: Proporciona un `TestEngine` para ejecutar tests escritos con versiones anteriores de JUnit (JUnit 3 y 4), permitiendo la compatibilidad hacia atrás.
 
-JUnit 5 requiere del uso de JUnit Jupiter y Platform para ejecutar los test, por ello se especificarán estas dependencias en el `build.gradle` de nuestro proyecto. Estas dependencias son mínimas y esenciales para su funcionamiento, mientras que otras bibliotecas como AssertJ y Hamcrest aumentan la carga de dependencias y configuraciones al no ser parte del ecosistema estándar.
+JUnit 5 requiere del uso de JUnit Jupiter y Platform para ejecutar los test, por ello se especificarán estas dependencias en el `build.gradle` de nuestro proyecto. Estas dependencias son mínimas y esenciales para su funcionamiento, mientras que otras bibliotecas como AssertJ y Hamcrest aumentan la carga de dependencias y configuraciones al no ser parte del ecosistema estándar..
 
 La forma básica de utilizarlo es anotando los tests con la anotación `@Test`. 
-Gracias a su Test Engine Jupiter soporta características avanzadas como `@BeforeEach` (para ejecutar código antes de cada test), `@AfterEach` (para realizar la limpieza o el "*tear down* después de cada test), agrupación mediante anotaciones como `@Tag`, pruebas parametrizadas y paralelas. Además éste permite integrar bibliotecas adicionales (e.g., AssertJ, Hamcrest) para personalizar las aserciones.
+Gracias a su Test Engine Jupiter soporta características avanzadas como `@BeforeEach` (para ejecutar código antes de cada test), `@AfterEach` (para realizar la limpieza o el "*tear down* después de cada test), agrupación mediante anotaciones como `@Tag`, pruebas parametrizadas y paralelas. Además éste permite integrar bibliotecas adicionales (e.g., AssertJ, Hamcrest) para personalizar las aserciones sin necesidad de añadir confirguraciones adicionales en el `build.gradle`.
 
 ### [TestNG](https://github.com/testng-team/testng)
 
-TestNG, aunque popular en el pasado, ha visto una disminución en su adopción frente a JUnit 5 en proyectos Java típicos y según las métricas de *GitHub*, tiene una actividad algo menor en comparación con JUnit. Si bien TestNG ofrece características avanzadas como dependencias entre pruebas y *suites* jerárquicas, estas a menudo introducen complejidad innecesaria para tests unitarios sencillos. TestNG sigue siendo útil para casos que requieran sus funcionalidades avanzadas, pero para la mayoría de los proyectos, JUnit 5 ofrece una solución más simple y directa. Finalmente, haciendo mención al uso de Test Engines, TestNG cuenta con su propio test engine y se integra con la JUnit Platform.
+TestNG, aunque popular en el pasado, ha visto una disminución en su adopción frente a JUnit 5 en proyectos Java típicos y según las métricas de *GitHub*, tiene una actividad algo menor en comparación con JUnit. Si bien TestNG ofrece características avanzadas como dependencias entre pruebas y *suites* jerárquicas, estas a menudo introducen complejidad innecesaria para tests unitarios sencillos. TestNG sigue siendo útil para casos que requieran sus funcionalidades avanzadas, pero para la mayoría de los proyectos, JUnit 5 ofrece una solución más simple y directa.  Es decir, cumple en su totalidad el criterio de características avanzadas, sin embargo para poder aprovecharlas es *necesario añadir una configuración adicional en el `build.gradle`*. Lo que genera que no cumpla con el criterio de evitar dependencias externas y configuración adicional. Por lo que, JUnit sigue siendo la mejoro opción para proyectos sencillos como este.
 
+Finalmente, haciendo mención al uso de Test Engines, TestNG cuenta con su propio test engine y se integra con la JUnit Platform.
 
 ### [Spock](https://github.com/spockframework/spock)
 
