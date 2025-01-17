@@ -1,8 +1,5 @@
 package WishfulGiving;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Regalo {
     private String titulo;
     private String descripcion;
@@ -13,14 +10,12 @@ public class Regalo {
     private static final int PRIORIDAD_MIN = 1;
     private static final int PRECIO_MIN = 0;
     
-    // Constructor por defecto para Jackson (instanciar objeto con JSON)
     public Regalo() {}
     
-    @JsonCreator
-    public Regalo(@JsonProperty("titulo") String titulo,
-            @JsonProperty("descripcion") String descripcion,
-            @JsonProperty("precio") double precio,
-            @JsonProperty("prioridad") int prioridad) {
+    public Regalo( String titulo,
+            String descripcion,
+             double precio,
+             int prioridad) {
         if (titulo == null || titulo.isEmpty()) {
             throw new IllegalArgumentException("El titulo del regalo no puede estar vacío.");
         }

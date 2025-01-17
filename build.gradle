@@ -16,11 +16,6 @@ dependencies {
 
     // Plataforma de pruebas JUnit
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
-
-    // Jackson para manejo de JSON
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
 }
 
 java {
