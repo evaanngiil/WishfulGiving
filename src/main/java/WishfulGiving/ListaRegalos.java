@@ -1,11 +1,10 @@
 package WishfulGiving;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 public class ListaRegalos {
@@ -15,11 +14,10 @@ public class ListaRegalos {
     
     public ListaRegalos() {}
     
-    @JsonCreator
     public ListaRegalos(
-            @JsonProperty("destinatario") String destinatario,
-            @JsonProperty("presupuesto") float presupuesto,
-            @JsonProperty("regalos") List<Regalo> regalos) {
+            String destinatario,
+            float presupuesto,
+            List<Regalo> regalos) {
         if (destinatario == null || destinatario.isEmpty()) {
             throw new IllegalArgumentException("El nombre del destinatario no puede estar vacío.");
         }
@@ -79,5 +77,56 @@ public class ListaRegalos {
                 .mapToDouble(Regalo::getPrecio)
                 .sum();
         return presupuesto - totalGastado;
+    }
+
+    public static List<ListaRegalos> cargarListasDeTexto(String filePath) {
+    List<ListaRegalos> listas = new ArrayList<>();
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(
+            ListaRegalos.class.getClassLoader().getResource(filePath).getFile()))) {
+        String line;
+        ListaRegalos listaActual = null;
+
+        while ((line = reader.readLine()) != null) {
+            line = line.trim();
+
+            // Ignorar líneas vacías o comentarios
+            if (line.isEmpty() || line.startsWith("#")) {
+                continue;
+            }
+
+            // Procesar nueva lista de regalos
+            if (line.split(";").length == 2) {
+                String[] partesLista = line.split(";");
+                listaActual = new ListaRegalos(partesLista[0], Float.parseFloat(partesLista[1]), new ArrayList<>());
+                listas.add(listaActual);
+            } else if (listaActual != null) {
+                // Procesar regalo
+                String[] partesRegalo = line.split(";");
+                String titulo = partesRegalo[0];
+                int prioridad = Integer.parseInt(partesRegalo[1]);
+                double precio = Double.parseDouble(partesRegalo[2]);
+
+                Regalo regalo = new Regalo(titulo, "Descripción no proporcionada", precio, prioridad);
+                listaActual.regalos.add(regalo);
+            }
+        }
+    } catch (IOException | NullPointerException e) {
+        throw new RuntimeException("Error al leer el archivo de texto: " + filePath + " - " + e.getMessage(), e);
+    }
+
+    return listas;
+}
+
+    public String getDestinatario() {
+        return destinatario;
+    }
+
+    public float getPresupuesto() {
+        return presupuesto;
+    }
+
+    public List<Regalo> getRegalos() {
+        return regalos;
     }
 }
