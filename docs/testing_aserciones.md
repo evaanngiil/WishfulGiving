@@ -4,7 +4,7 @@
 
 Para elegir la biblioteca de aserciones en Java, se han considerado los siguientes criterios principales:
 
-- Evitar la dependencia de librerías externas. Es decir, se priorizan herramientas nativas o ampliamente adoptadas en el ecosistema estándar de Java para reducir la complejidad y la deuda técnica.
+- Evitar la dependencia de librerías externas. Es decir, se priorizan herramientas nativas en el ecosistema estándar de Java para reducir la complejidad y la deuda técnica.
 
 - Se consideran herramientas con métricas objetivas de mantenimiento, tales como actividad reciente en el repositorio (commits en el último año), volumen de contribuciones y número de versiones estables lanzadas en el último año.
 
