@@ -12,11 +12,11 @@ public class ListaRegalosTest {
             new Regalo("Enter de peluche", "Un enter de peluche enorme para desahogarme cuando me estreso haciendo código", 20.0, 5),
             new Regalo("Monopoly 64 peones", "Monopoly con destacados de oro y plata y con hasta 64 peones", 70.0, 4)
     );
-    private static final String TEST_JSON_PATH = "data/test_regalos.json";
+    private static final String TEST_DATA_PATH = "data/test_regalos.txt";
 
-    @Test
+   @Test
     void obtenerRegalosDentroDelPresupuesto() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
+        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
         ListaRegalos listaJuan = listas.get(0);
 
         List<Regalo> regalosSeleccionados = listaJuan.obtenerRegalosDentroPresupuesto();
@@ -31,7 +31,7 @@ public class ListaRegalosTest {
 
     @Test
     void maximizarSatisfaccion() {
-        List<ListaRegalos> listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
+        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
         ListaRegalos lista = listas.get(0);
 
         List<Regalo> regalosSeleccionados = lista.obtenerRegalosDentroPresupuesto();
@@ -45,8 +45,7 @@ public class ListaRegalosTest {
     
     @Test
     void calcularPresupuestoRestante() {
-        var listas = JsonLoader.cargarListasDeRegalos(TEST_JSON_PATH);
-        
+        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
         ListaRegalos listaAna = listas.get(1);
 
         double presupuestoRestante = listaAna.calcularPresupuestoRestante();
