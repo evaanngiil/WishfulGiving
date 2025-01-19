@@ -118,4 +118,26 @@ public class ListaRegalos {
     return listas;
 }
 
+/**
+     * Obtiene la lista de regalos basándose en el costo mínimo sin optimización de satisfacción.
+     * @return Lista de regalos seleccionados por costo mínimo.
+     */
+    public List<Regalo> obtenerRegalosPorCostoMinimo() {
+        List<Regalo> regalosOrdenados = new ArrayList<>(regalos);
+        regalosOrdenados.sort(Comparator.comparingDouble(Regalo::getPrecio));
+
+        List<Regalo> regalosSeleccionados = new ArrayList<>();
+        double presupuestoRestante = presupuesto;
+
+        for (Regalo regalo : regalosOrdenados) {
+            if (regalo.getPrecio() <= presupuestoRestante) {
+                regalosSeleccionados.add(regalo);
+                presupuestoRestante -= regalo.getPrecio();
+            }
+        }
+
+        return regalosSeleccionados;
+    }
+
+
 }
