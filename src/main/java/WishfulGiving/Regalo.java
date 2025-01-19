@@ -41,10 +41,6 @@ public class Regalo {
         return prioridad / precio;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
     public double getPrecio() {
         return precio;
     }
