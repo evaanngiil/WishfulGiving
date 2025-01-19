@@ -1,6 +1,7 @@
 package WishfulGiving;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -29,6 +30,10 @@ public class ListaRegalos {
         this.regalos = regalos != null ? new ArrayList<>(regalos) : new ArrayList<>();
     }
     
+    public float getPresupuesto() {
+        return presupuesto;
+    }
+
     /**
      * Obtiene la lista de regalos que maximiza la satisfacción dentro del presupuesto disponible.
      * @return Lista de regalos seleccionados para maximizar la satisfacción.
