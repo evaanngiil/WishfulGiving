@@ -8,7 +8,7 @@ Es importante diferenciar entre un framework de testing (como JUnit) y un motor 
 
 ### Estándar - [JUnit 5](https://github.com/junit-team/junit5)
 
-JUnit 5 es el estándar en Java para la ejecución de pruebas. Según su repositorio en GitHub, cuenta con alta actividad de mantenimiento, con múltiples contribuciones activas y al menos dos versiones estables lanzadas en el último año.
+JUnit 5 es considerado el estándar de facto en Java para la ejecución de pruebas unitarias debido a su adopción masiva en la comunidad de desarrolladores, su soporte integrado en herramientas populares como IntelliJ IDEA, Eclipse, Maven y Gradle, y su diseño modular y extensible. Aunque no viene incluido en las distribuciones oficiales de Java SE o JDK, su instalación es sencilla mediante los sistemas de construcción más utilizados. Además, cuenta con alta actividad de mantenimiento en su repositorio de GitHub, con múltiples contribuciones activas y al menos dos versiones estables lanzadas en el último año.
 
 JUnit se compone de tres submódulos:
 
