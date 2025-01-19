@@ -30,7 +30,7 @@ Finalmente, haciendo mención al uso de Test Engines, TestNG cuenta con su propi
 ### [Spock](https://github.com/spockframework/spock)
 
 **Spock - Spec como concepto**
-Spock es un framework de testing y especificaciones para aplicaciones Java y Groovy. Su principal característica es el uso de "specs" (especificaciones), que permiten escribir tests de una manera mucho más descriptiva y legible, siguiendo un estilo inspirado en BDD (Behavior-Driven Development) el cual no es el que estamos siguiendo en este objetivo (TDD)..
+Spock es un framework de testing y especificaciones para aplicaciones Java y Groovy. Actúa como un test runner y como una biblioteca de aserciones. Su principal característica es el uso de "specs" (especificaciones), que permiten escribir tests de una manera mucho más descriptiva y legible, siguiendo un estilo inspirado en BDD (Behavior-Driven Development) el cual no es el que estamos siguiendo en este objetivo (TDD)..
 
  Spock Cuenta con una actividad al nivel de JUnit 5 en *GitHub*, con versiones recientes lanzadas. Spock tiene su propio test engine y se integra con la JUnit Platform. Sin embargo, no cumple completamente con el criterio de integración, ya que su dependencia de Groovy y la configuración adicional necesaria en Maven o Gradle lo hacen menos práctico para proyectos Java puro.
 
