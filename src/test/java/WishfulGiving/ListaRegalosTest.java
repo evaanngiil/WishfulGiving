@@ -61,4 +61,23 @@ public class ListaRegalosTest {
         assertEquals(10.0, presupuestoRestante,
                 "El presupuesto restante calculado no es el esperado.");
     }
+
+    @Test
+    void compararSatisfaccionYCosto() {
+        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
+        ListaRegalos lista = listas.get(0);
+
+        List<Regalo> regalosMaxSatisfaccion = lista.obtenerRegalosDentroPresupuesto();
+        List<Regalo> regalosCostoMinimo = lista.obtenerRegalosPorCostoMinimo();
+
+        int prioridadMax = regalosMaxSatisfaccion.stream().mapToInt(Regalo::getPrioridad).sum();
+        int prioridadMin = regalosCostoMinimo.stream().mapToInt(Regalo::getPrioridad).sum();
+
+        double costoMax = regalosMaxSatisfaccion.stream().mapToDouble(Regalo::getPrecio).sum();
+        double costoMin = regalosCostoMinimo.stream().mapToDouble(Regalo::getPrecio).sum();
+
+        assertTrue(prioridadMax > prioridadMin, "La maximización de satisfacción no es mayor");
+        assertTrue(costoMin < costoMax, "La minimización de costo no es menor");
+    }
+
 }
