@@ -36,11 +36,12 @@ Spock es un framework de testing y especificaciones para aplicaciones Java y Gro
 
 # Herramientas CLI
 
-En el caso de Java, lo habitual para compilar y ejecutar los tests es usar las herramientas estándar integradas en los sistemas de construcción como Maven o Gradle. Sin embargo, Gradle se destaca por su enfoque moderno y eficiente en la gestión de tareas de construcción y pruebas como ya se vió [aquí](gestor_tareas.md).
+En el caso de Java, lo habitual para compilar y ejecutar los tests es usar las herramientas estándar integradas en los sistemas de construcción como Maven o Gradle.
+No obstante, para ejecutar pruebas con un test runner, es obligatorio definir explícitamente el motor de pruebas (*Test Engine)*. Por ejemplo, al usar *JUnit 5*, es necesario especificar `org.junit.jupiter:junit-jupiter `como dependencia en el archivo de configuración del sistema de construcción. Esto asegura que Gradle pueda reconocer y ejecutar los tests correctamente.
 
-Para compilar y ejecutar las pruebas en **Gradle** se requiere definir explícitamente el *testing engine* en el archivo de configuración (`build.gradle`).  
+La elección de Gradle o Maven como herramienta de construcción no afecta directamente al motor de pruebas utilizado, pero sí influye en la eficiencia y personalización del flujo de trabajo. Por esta razón, aunque la elección de la herramienta CLI no sea crítica para el ecosistema Java, la correcta configuración del Test Engine es esencial para ejecutar pruebas de manera adecuada.
 
-Ejemplo de configuración en Gradle para usar el engine Jupiter:
+Ejemplo de configuración en Gradle para usar el engine Jupiter del que depende JUnit 5:
 
 ```gradle
 dependencies {
