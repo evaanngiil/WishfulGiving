@@ -39,33 +39,33 @@ public class ListaRegalos {
      * @return Lista de regalos seleccionados para maximizar la satisfacción.
      */
     public List<Regalo> obtenerRegalosDentroPresupuesto() {
-        int n = regalos.size();
-        int capacidad = (int) presupuesto;
+        int numRegalos = regalos.size();
+        int capacidadPresupuesto = (int) presupuesto;
 
-        int [][] dp = new int [n + 1][capacidad + 1];
+        int [][] matrizDinamica = new int [numRegalos + 1][capacidadPresupuesto + 1];
         
-        for (int i = 1; i<= n; i++) {
+        for (int i = 1; i<= numRegalos; i++) {
             Regalo regalo = regalos.get(i-1);
-            int peso = (int) regalo.getPrecio();
-            int valor = regalo.getPrioridad();
+            int precioRegalo = (int) regalo.getPrecio();
+            int prioridadRegalo = regalo.getPrioridad();
 
-            for (int j = 0; j <= capacidad; j++) {
-                if (peso <= j) {
-                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-peso] + valor);
+            for (int j = 0; j <= capacidadPresupuesto; j++) {
+                if (precioRegalo <= j) {
+                    matrizDinamica[i][j] = Math.max(matrizDinamica[i-1][j], matrizDinamica[i-1][j-precioRegalo] + prioridadRegalo);
                 } else {
-                    dp[i][j] = dp[i-1][j];
+                    matrizDinamica[i][j] = matrizDinamica[i-1][j];
                 }
             }
         }
 
         List<Regalo> regalosSeleccionados = new ArrayList<>();
-        int w = capacidad;
+        int presupuestoRestante = capacidadPresupuesto;
 
-        for (int i = n; i > 0 && w > 0; i--) {
-            if (dp[i][w] != dp[i-1][w]) {
+        for (int i = numRegalos; i > 0 && presupuestoRestante > 0; i--) {
+            if (matrizDinamica[i][presupuestoRestante] != matrizDinamica[i-1][presupuestoRestante]) {
                 Regalo regalo = regalos.get(i-1);
                 regalosSeleccionados.add(regalo);
-                w -= regalo.getPrecio();
+                presupuestoRestante -= regalo.getPrecio();
             }
         }
 
