@@ -1,87 +1,86 @@
 package WishfulGiving;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ListaRegalosTest {
-    
-    private static final double PRESUPUESTO_RESTANTE = 10.0;  
+    private static final double PRESUPUESTO_RESTANTE_ANA = 5.0;
     private static final double COSTO_TOTAL_ESPERADO_JUAN = 90.0;
     private static final int SATISFACCION_TOTAL_ESPERADA_JUAN = 9;
-    private static final double COSTO_TOTAL_ESPERADO_ANA = 40.0;
-    private static final int SATISFACCION_TOTAL_ESPERADA_ANA = 7;
+    private static final double COSTO_TOTAL_ESPERADO_ANA = 45.0;
+    private static final int SATISFACCION_TOTAL_ESPERADA_ANA = 10;
     private static final String TEST_DATA_PATH = "data/test_regalos.txt";
-    
+
     @Test
     void calcularPresupuestoRestante() {
-        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
-        ListaRegalos listaAna = listas.get(1);
+        GestorListaRegalos gestor = GestorListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
+
+        ListaRegalos listaAna = gestor.obtenerListasPorPropietario("Evan").stream()
+                .filter(lista -> lista.getDestinatario().equals("Ana"))
+                .findFirst()
+                .orElseThrow(() -> new AssertionError("No se encontró la lista para Ana."));
 
         double presupuestoRestante = listaAna.calcularPresupuestoRestante();
-        assertEquals(PRESUPUESTO_RESTANTE, presupuestoRestante,
+        System.out.println("Presupuesto restante para Ana: " + presupuestoRestante);
+        assertEquals(PRESUPUESTO_RESTANTE_ANA, presupuestoRestante,
                 "El presupuesto restante calculado no es el esperado.");
     }
 
-     @Test
+    @Test
     void compararSatisfaccionYCosto() {
-        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
-        
-        ListaRegalos listaJuan = listas.get(0);
-        List<Regalo> regalosSeleccionadosJuan = listaJuan.obtenerRegalosDentroPresupuesto();
+        GestorListaRegalos gestor = GestorListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
 
-        double costoSeleccionadoJuan = regalosSeleccionadosJuan.stream()
-                .map(Regalo::getPrecio)
-                .reduce(0.0, Double::sum); 
-        assertTrue(costoSeleccionadoJuan <= listaJuan.getPresupuesto(), "Se excede el presupuesto de Juan.");
-
-        int satisfaccionSeleccionadaJuan = regalosSeleccionadosJuan.stream()
-                .map(Regalo::getPrioridad)
-                .reduce(0, Integer::sum); 
-        assertEquals(SATISFACCION_TOTAL_ESPERADA_JUAN, satisfaccionSeleccionadaJuan, "La satisfacción total para Juan no es la esperada.");
-
-        ListaRegalos listaAna = listas.get(1);
-        List<Regalo> regalosSeleccionadosAna = listaAna.obtenerRegalosDentroPresupuesto();
-
-        double costoSeleccionadoAna = regalosSeleccionadosAna.stream()
-                .map(Regalo::getPrecio)
-                .reduce(0.0, Double::sum);
-        assertTrue(costoSeleccionadoAna <= listaAna.getPresupuesto(), "Se excede el presupuesto de Ana.");
-
-        int satisfaccionSeleccionadaAna = regalosSeleccionadosAna.stream()
-                .map(Regalo::getPrioridad)
-                .reduce(0, Integer::sum);
-        assertEquals(SATISFACCION_TOTAL_ESPERADA_ANA, satisfaccionSeleccionadaAna, "La satisfacción total para Ana no es la esperada.");
+        verificarSatisfaccionYCosto(gestor, "Evan", "Juan", COSTO_TOTAL_ESPERADO_JUAN, SATISFACCION_TOTAL_ESPERADA_JUAN);
+        verificarSatisfaccionYCosto(gestor, "Evan", "Ana", COSTO_TOTAL_ESPERADO_ANA, SATISFACCION_TOTAL_ESPERADA_ANA);
     }
 
     @Test
     void verificarAsignacionesSubóptimas() {
-        List<ListaRegalos> listas = ListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
+        GestorListaRegalos gestor = GestorListaRegalos.cargarListasDeTexto(TEST_DATA_PATH);
 
-        ListaRegalos listaJuan = listas.get(0);
-        List<Regalo> regalosSeleccionadosJuan = listaJuan.obtenerRegalosDentroPresupuesto();
-
-        List<Regalo> regalosSuboptimosJuan = listaJuan.getRegalos()
-                .stream()
-                .sorted((r1, r2) -> Integer.compare(r1.getPrioridad(), r2.getPrioridad()))
-                .toList();
-
-        double costoSuboptimoJuan = 0.0;
-        int satisfaccionSuboptimaJuan = 0;
-        for (Regalo regalo : regalosSuboptimosJuan) {
-            if (costoSuboptimoJuan + regalo.getPrecio() <= listaJuan.getPresupuesto()) {
-                costoSuboptimoJuan += regalo.getPrecio();
-                satisfaccionSuboptimaJuan += regalo.getPrioridad();
-            }
-        }
-
-        int satisfaccionOptimaJuan = regalosSeleccionadosJuan.stream()
-                .map(Regalo::getPrioridad)
-                .reduce(0, Integer::sum);
-
-        assertTrue(satisfaccionOptimaJuan > satisfaccionSuboptimaJuan,
-                "La asignación óptima no maximiza la satisfacción para Juan.");
+        verificarSatisfaccionYSuboptima(gestor, "Evan", "Juan", 100.0);
+        verificarSatisfaccionYSuboptima(gestor, "Evan", "Ana", 50.0);
     }
 
+    private void verificarSatisfaccionYCosto(GestorListaRegalos gestor, String propietario, String destinatario, double costoEsperado, int satisfaccionEsperada) {
+        ListaRegalos lista = gestor.obtenerListasPorPropietario(propietario).stream()
+                .filter(l -> l.getDestinatario().equals(destinatario))
+                .findFirst()
+                .orElseThrow(() -> new AssertionError("No se encontró la lista para " + destinatario));
+
+        List<Regalo> regalosSeleccionados = lista.obtenerRegalosDentroPresupuesto();
+
+        double costoSeleccionado = regalosSeleccionados.stream()
+                .map(Regalo::getPrecio)
+                .reduce(0.0, Double::sum);
+        assertEquals(costoEsperado, costoSeleccionado, "El costo total para " + destinatario + " no es el esperado.");
+
+        int satisfaccionSeleccionada = regalosSeleccionados.stream()
+                .mapToInt(Regalo::getPrioridad)
+                .sum();
+        assertEquals(satisfaccionEsperada, satisfaccionSeleccionada, "La satisfacción total para " + destinatario + " no es la esperada.");
+    }
+
+    private void verificarSatisfaccionYSuboptima(GestorListaRegalos gestor, String propietario, String destinatario, double presupuesto) {
+        ListaRegalos lista = gestor.obtenerListasPorPropietario(propietario).stream()
+                .filter(list -> list.getDestinatario().equals(destinatario))
+                .findFirst()
+                .orElseThrow(() -> new AssertionError("No se encontró la lista para " + destinatario));
+
+        List<Regalo> regalosSeleccionadosOptimos = lista.obtenerRegalosDentroPresupuesto();
+        int satisfaccionOptima = regalosSeleccionadosOptimos.stream()
+                .mapToInt(Regalo::getPrioridad)
+                .sum();
+
+        List<Regalo> regalosSeleccionadosPorCosto = lista.obtenerRegalosPorCostoMinimo();
+        int satisfaccionSuboptima = regalosSeleccionadosPorCosto.stream()
+                .mapToInt(Regalo::getPrioridad)
+                .sum();
+
+        assertTrue(satisfaccionOptima > satisfaccionSuboptima,
+                "La asignación óptima no maximiza la satisfacción para " + destinatario);
+    }
 }
