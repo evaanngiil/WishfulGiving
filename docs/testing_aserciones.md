@@ -28,6 +28,6 @@ En términos de mantenimiento, Spock cuenta con una actividad similar a JUnit 5 
 
 - **[Hamcrest](https://github.com/hamcrest/JavaHamcrest)**  aunque fue ampliamente utilizado en el pasado, ha perdido relevancia frente a JUnit 5 y AssertJ. Tiene baja actividad en su repositorio de *GitHub*, con la última versión estable lanzada hace más de un año. Es compatible con Maven y Gradle, pero requiere configuración adicional, por lo que podría incrementar la deuda técnica.
 
-## Elección de Biblioteca de Aserciones
+## Decisión final
 
 Se selecciona **JUnit 5** como biblioteca de aserciones debido a que esta incluida en la biblioteca estándar de Java, a su mantenimiento activo y su flexibilidad. **JUnit 5** requiere dependencias, pero estas son mínimas y esenciales para su funcionamiento, mientras que otras bibliotecas como AssertJ y Hamcrest aumentan la carga de dependencias y configuraciones al no ser parte del ecosistema estándar
