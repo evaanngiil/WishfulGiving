@@ -24,7 +24,6 @@ public class ListaRegalosTest {
                 .orElseThrow(() -> new AssertionError("No se encontró la lista para Ana."));
 
         double presupuestoRestante = listaAna.calcularPresupuestoRestante();
-        System.out.println("Presupuesto restante para Ana: " + presupuestoRestante);
         assertEquals(PRESUPUESTO_RESTANTE_ANA, presupuestoRestante,
                 "El presupuesto restante calculado no es el esperado.");
     }
