@@ -77,10 +77,10 @@ public class ListaRegalos {
      * @return Presupuesto restante.
      */
     public double calcularPresupuestoRestante() {
-        double totalGastado = obtenerRegalosDentroPresupuesto()
-                .stream()
-                .mapToDouble(Regalo::getPrecio)
-                .sum();
+        double totalGastado = 0;
+        for (Regalo regalo : obtenerRegalosDentroPresupuesto()) {
+            totalGastado += regalo.getPrecio();
+        }
         return presupuesto - totalGastado;
     }
 
