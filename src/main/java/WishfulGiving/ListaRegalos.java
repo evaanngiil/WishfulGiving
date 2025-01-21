@@ -30,8 +30,8 @@ public class ListaRegalos {
         this.regalos = regalos != null ? new ArrayList<>(regalos) : new ArrayList<>();
     }
     
-    public float getPresupuesto() {
-        return presupuesto;
+    public String getDestinatario() {
+        return destinatario;
     }
 
     public List<Regalo> getRegalos() {
@@ -88,42 +88,6 @@ public class ListaRegalos {
         return presupuesto - totalGastado;
     }
 
-    public static List<ListaRegalos> cargarListasDeTexto(String filePath) {
-        List<ListaRegalos> listas = new ArrayList<>();
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(
-                ListaRegalos.class.getClassLoader().getResource(filePath).getFile()))) {
-            String line;
-            ListaRegalos listaActual = null;
-
-            while ((line = reader.readLine()) != null) {
-                line = line.trim();
-
-                if (line.isEmpty()) {
-                    continue;
-                }
-
-                if (line.split(";").length == 2) {
-                    String[] partesLista = line.split(";");
-                    listaActual = new ListaRegalos(partesLista[0], Float.parseFloat(partesLista[1]), new ArrayList<>());
-                    listas.add(listaActual);
-                } else if (listaActual != null) {
-                    String[] partesRegalo = line.split(";");
-                    String titulo = partesRegalo[0];
-                    int prioridad = Integer.parseInt(partesRegalo[1]);
-                    double precio = Double.parseDouble(partesRegalo[2]);
-
-                    Regalo regalo = new Regalo(titulo, "Descripción no proporcionada", precio, prioridad);
-                    listaActual.regalos.add(regalo);
-                }
-            }
-        } catch (IOException | NullPointerException e) {
-            throw new RuntimeException("Error al leer el archivo de texto: " + filePath + " - " + e.getMessage(), e);
-        }
-
-        return listas;
-}
-
 /**
      * Obtiene la lista de regalos basándose en el costo mínimo sin optimización de satisfacción.
      * @return Lista de regalos seleccionados por costo mínimo.
@@ -144,6 +108,5 @@ public class ListaRegalos {
 
         return regalosSeleccionados;
     }
-
 
 }
