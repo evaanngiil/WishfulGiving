@@ -1,10 +1,8 @@
-# Lista de Juan
 Juan;100.0
 Libro;3;20.0
 Monopoly 64 peones;4;70.0
 Enter de peluche;5;20.0
 
-# Lista de Ana
 Ana;50.0
 Caja de Chocolates;3;25.0
 Vela Aromática;4;15.0
