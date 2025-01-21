@@ -4,17 +4,11 @@ El test runner es fundamental para ejecutar y organizar los tests que verifican 
 
 Además, añadiremos un nuevo criterio de elección: 4. **Características avanzadas**. Considerar características como paralelización, dependencias entre tests y suites jerárquicas para optimizar tiempos y estructuras complejas. 
 
-Es importante diferenciar entre un framework de testing (como JUnit) y un motor de pruebas (Test Engine). El framework proporciona la estructura para escribir las pruebas (anotaciones, aserciones), mientras que el motor de pruebas es el responsable de descubrir y ejecutar las pruebas.
+En este documento se mencionan conceptos claves como Test Engines que puedes ver descritos [aquí](testing_testengine.md).
 
 ### Estándar - [JUnit 5](https://github.com/junit-team/junit5)
 
 JUnit 5 es considerado el estándar de facto en Java para la ejecución de pruebas unitarias debido a su adopción masiva en la comunidad de desarrolladores, su soporte integrado en herramientas populares como IntelliJ IDEA, Eclipse, Maven y Gradle, y su diseño modular y extensible. Aunque no viene incluido en las distribuciones oficiales de Java SE o JDK, su instalación es sencilla mediante los sistemas de construcción más utilizados. Además, cuenta con alta actividad de mantenimiento en su repositorio de GitHub, con múltiples contribuciones activas y al menos dos versiones estables lanzadas en el último año.
-
-JUnit se compone de tres submódulos:
-
-- **JUnit Platform**: Es la base para lanzar frameworks de testing en la JVM. Define la API `TestEngine` que permite la integración de diferentes motores de pruebas.
-- **JUnit Jupiter**: Es el nuevo modelo de programación para escribir tests en JUnit 5. Incluye las nuevas anotaciones (`@Test`,` @BeforeEach`, `@AfterEach`, etc.) y el motor de pruebas que las ejecuta.
-- **JUnit Vintage**: Proporciona un `TestEngine` para ejecutar tests escritos con versiones anteriores de JUnit (JUnit 3 y 4), permitiendo la compatibilidad hacia atrás.
 
 JUnit 5 requiere del uso de JUnit Jupiter y Platform para ejecutar los test, por ello se especificarán estas dependencias en el `build.gradle` de nuestro proyecto. Estas dependencias son mínimas y esenciales para su funcionamiento, mientras que otras bibliotecas como AssertJ y Hamcrest aumentan la carga de dependencias y configuraciones al no ser parte del ecosistema estándar..
 

@@ -44,12 +44,3 @@ En términos de mantenimiento, Spock cuenta con una actividad similar a JUnit 5 
 ## Elección de Biblioteca de Aserciones
 
 Se selecciona **JUnit 5** como biblioteca de aserciones debido a que esta incluida en la biblioteca estándar de Java, a su mantenimiento activo y su flexibilidad. **JUnit 5** requiere dependencias, pero estas son mínimas y esenciales para su funcionamiento, mientras que otras bibliotecas como AssertJ y Hamcrest aumentan la carga de dependencias y configuraciones al no ser parte del ecosistema estándar
-
-### Testing Engines
-
-En el ecosistema de Java, las bibliotecas de aserciones y los test runners están respaldados por **testing engines**, que definen cómo se ejecutan y gestionan las pruebas. **JUnit**, por ejemplo, introduce los siguientes engines:  
-
-- **Jupiter**: Engine moderno de JUnit 5 para pruebas unitarias. Soporta características como `@BeforeEach`, `@AfterEach` y pruebas parametrizadas.  
-- **Vintage**: Engine para ejecutar pruebas escritas con versiones anteriores de JUnit (3 y 4), proporcionando compatibilidad retroactiva.  
-
-Los testing engines permiten la integración de múltiples enfoques y bibliotecas bajo un mismo framework, ofreciendo flexibilidad en la configuración y ejecución de pruebas. Por convención, ya que vamos a usar JUnit 5, se elige **Jupiter** como testing engine.
