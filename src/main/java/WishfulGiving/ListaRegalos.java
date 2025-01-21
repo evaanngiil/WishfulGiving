@@ -34,6 +34,10 @@ public class ListaRegalos {
         return presupuesto;
     }
 
+    public List<Regalo> getRegalos() {
+        return regalos;
+    }
+
     /**
      * Obtiene la lista de regalos que maximiza la satisfacción dentro del presupuesto disponible.
      * @return Lista de regalos seleccionados para maximizar la satisfacción.
@@ -95,18 +99,15 @@ public class ListaRegalos {
         while ((line = reader.readLine()) != null) {
             line = line.trim();
 
-            // Ignorar líneas vacías o comentarios
-            if (line.isEmpty() || line.startsWith("#")) {
+            if (line.isEmpty()) {
                 continue;
             }
 
-            // Procesar nueva lista de regalos
             if (line.split(";").length == 2) {
                 String[] partesLista = line.split(";");
                 listaActual = new ListaRegalos(partesLista[0], Float.parseFloat(partesLista[1]), new ArrayList<>());
                 listas.add(listaActual);
             } else if (listaActual != null) {
-                // Procesar regalo
                 String[] partesRegalo = line.split(";");
                 String titulo = partesRegalo[0];
                 int prioridad = Integer.parseInt(partesRegalo[1]);
