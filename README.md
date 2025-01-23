@@ -46,5 +46,9 @@ Para elegir el gestor de dependencias se ha tenido en cuenta una serie de criter
 
 Así mismo se detalla [aquí](docs/gestor_tareas.md) los criterios en los que me he basado para elegir Gradle como gestor de tareas.
 
+### Aserciones en Java y test-runner:
 
+En [este](docs/testing_aserciones.md) documento se detallan los motivos que me ha llevado a elegir `JUnit 5` como biblioteca de aserciones. 
 
+Además, en este [otro](docs/testing_testrunner.md) encontrarás los criterios utilizados para elegir a `JUnit 5` como test-runner y a `Gradle`como herramienta que nos permite ejecutar los tests usando el TestEngine de cada biblioteca, en los ecosistemas Java no existen  herramientas CLI de tests.
+Para poder ejecutar los tests con la herramienta CLI debemos ejecutar el comando `./gradlew test`

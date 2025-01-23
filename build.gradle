@@ -6,12 +6,13 @@ plugins {
 version = '1.0.0'
 description = 'Lista de deseos compartida para cumpleaños'
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-    }
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
 }
 
 java {
@@ -20,9 +21,11 @@ java {
     }
 }
 
-
-repositories {
-    mavenCentral()
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 tasks.named('check').configure {
