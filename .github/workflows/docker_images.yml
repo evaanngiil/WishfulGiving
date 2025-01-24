@@ -30,4 +30,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/wishfulgiving:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/wishfulgiving:latest
