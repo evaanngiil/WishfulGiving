@@ -17,6 +17,11 @@ COPY src src
 # Damos permisos de ejecución al script gradlew
 RUN chmod +x gradlew
 
+RUN adduser -D -h /home/tests tests \
+    && mkdir -p /home/tests/.cache \
+    && chmod -R a+w /home/tests/.cache
+
+USER tests
 # No ejecutamos gradlew en esta fase, así evitamos descargar Gradle en la imagen
 # y mantenemos la capa lo más liviana posible.
 
