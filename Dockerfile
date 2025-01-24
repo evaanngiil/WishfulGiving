@@ -6,9 +6,9 @@ RUN apk add --no-cache openjdk17 bash \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY gradlew gradlew
-COPY gradle/wrapper gradle/wrapper
-COPY build.gradle settings.gradle ./
-COPY src src
+COPY ./gradle/wrapper ./gradle/wrapper
+COPY build.gradle .settings.gradle ./
+COPY ./src ./src
 
 RUN chmod +x gradlew
 
