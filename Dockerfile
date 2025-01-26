@@ -12,12 +12,12 @@ COPY ./src ./src
 
 RUN chmod +x gradlew
 
-RUN adduser -D -h /home/tests tests \
-        && mkdir -p /home/tests/.gradle \
-        && chown -R tests:tests /home/tests
+RUN adduser -D -h /app/tests tests \
+        && mkdir -p /app/tests/.gradle \
+        && chown -R tests:tests /app/tests
 
 USER tests
 
-ENV GRADLE_USER_HOME=/home/tests/.gradle
+ENV GRADLE_USER_HOME=/app/tests/.gradle
 
 ENTRYPOINT ["./gradlew", "test"]
