@@ -60,7 +60,7 @@ La aplicación ha sido virtualizada usando Docker. Para ello se han seguido una 
 Para poder ejecutar el contenedor subido a Docker Hub usaremos:
 
 ```bash
-  docker run -t -u 1001 -v `pwd`:/app/test evaanngc/wishfulgiving:1.0
+  docker run -u 1001 -t -v `pwd`:/app/test evaanngiil/wishfulgiving:latest
 ```
 
 Para ejecutarlo en local necesitamos instanciar el contenedor con:
