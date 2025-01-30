@@ -3,7 +3,7 @@
 
 - Se valorará que la imagen reciba actualizaciones frecuentes (parches de seguridad) y tenga un soporte activo. Lo mediremos buscando la última actualización en Docker Hub y/o repositorio oficial.
 
-- Se priorizan imágenes más pequeñas, lo que reduce tiempos de descarga y despliegue en CI/CD. Lo mediremos comparando los tamaños reportados en Docker Hub o los resultados de `docker images` en el entorno de desarrollo.
+- Se priorizan imágenes más pequeñas, lo que reduce tiempos de descarga y despliegue en CI/CD. Lo mediremos comparando los tamaños resultados de `docker images` en el entorno de desarrollo.
 
 - Se valorará que la imagen tenga insignias de ¨Official¨ o ¨Verified Publisher¨ ya que aporta confianza en la calidad y seguridad de la imagen y no estamos usando ¨cualquier cosa¨.
 
