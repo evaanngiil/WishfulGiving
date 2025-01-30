@@ -14,18 +14,11 @@ RUN curl -Ls "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}
 ENV GRADLE_HOME=/opt/gradle-${GRADLE_VERSION}
 ENV PATH="${PATH}:${GRADLE_HOME}/bin"
 
-RUN adduser -D  -h /home/tests tests \
+RUN adduser -D -h /home/tests tests \
     && mkdir -p /home/tests/.gradle \
+    && mkdir -p /home/tests/build \
     && chown -R tests:tests /home/tests
-
-RUN chmod -R a+r .
 
 USER tests
 
-WORKDIR /home/tests
-
-COPY build.gradle .
-COPY settings.gradle .
-COPY src src
-
-ENTRYPOINT ["gradle", "test"]
+ ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle",  "-Dgradle.user.home=/home/tests/.gradle"]
