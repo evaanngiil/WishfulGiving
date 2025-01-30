@@ -52,3 +52,24 @@ En [este](docs/testing_aserciones.md) documento se detallan los motivos que me h
 
 Además, en este [otro](docs/testing_testrunner.md) encontrarás los criterios utilizados para elegir a `JUnit 5` como test-runner y a `Gradle`como herramienta que nos permite ejecutar los tests usando el TestEngine de cada biblioteca, en los ecosistemas Java no existen  herramientas CLI de tests.
 Para poder ejecutar los tests con la herramienta CLI debemos ejecutar el comando `./gradlew test`
+
+## Docker
+
+La aplicación ha sido virtualizada usando Docker. Para ello se han seguido una serie de criterios que han llevado a elegir Alpine como imagen base. Lo puedes ver en [aquí](docs/imagen_docker.md) .
+
+Para poder ejecutar el contenedor subido a Docker Hub usaremos:
+
+```bash
+  docker run -u 1001 -t -v `pwd`:/app/test evaanngiil/wishfulgiving:latest
+```
+
+Para ejecutarlo en local necesitamos instanciar el contenedor con:
+
+```bash
+    docker build -t app 
+```
+y posteriormente ejecutarlo con:
+
+```bash
+    docker run -t -u 1001 -v `pwd`:/app/test app
+```

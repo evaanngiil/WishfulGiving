@@ -6,6 +6,8 @@ plugins {
 version = '1.0.0'
 description = 'Lista de deseos compartida para cumpleaños'
 
+buildDir = System.getProperty('user.home') + '/builds/' + project.name
+
 repositories {
     mavenCentral()
 }

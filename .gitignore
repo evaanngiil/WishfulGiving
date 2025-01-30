@@ -1,8 +1,6 @@
 # Archivos del gestor de dependencias y tareas
-.gradle
-gradle
-gradlew*
 build
+.gradle
 
 # Archivos de compilación
 bin
