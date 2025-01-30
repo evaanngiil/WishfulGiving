@@ -2,7 +2,7 @@ FROM alpine:latest
 
 WORKDIR /app/test
 
-RUN apk add --no-cache openjdk17 bash make curl unzip \
+RUN apk add --no-cache openjdk17 make curl unzip \
     && rm -rf /var/cache/apk/*
 
 ARG GRADLE_VERSION=8.10
