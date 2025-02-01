@@ -2,16 +2,17 @@ FROM alpine:latest
 
 WORKDIR /app/test
 
-RUN apk add --no-cache openjdk17 make curl unzip \
+RUN apk update \
+    && apk add --no-cache unzip openjdk17-jre \
     && rm -rf /var/cache/apk/*
 
-ARG GRADLE_VERSION=8.10
-
-RUN curl -Ls "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o gradle.zip \
+RUN GRADLE_VERSION=$(wget -qO- https://gradle.org/releases/ | grep -o 'v[0-9]\+\.[0-9]\+' | head -n1 | cut -c2-) \
+    && wget -q "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -O gradle.zip \
     && unzip gradle.zip -d /opt \
+    && mv /opt/gradle-${GRADLE_VERSION} /opt/gradle \
     && rm gradle.zip
 
-ENV GRADLE_HOME=/opt/gradle-${GRADLE_VERSION}
+ENV GRADLE_HOME=/opt/gradle
 ENV PATH="${PATH}:${GRADLE_HOME}/bin"
 
 RUN adduser -D -h /home/tests tests \
@@ -21,4 +22,5 @@ RUN adduser -D -h /home/tests tests \
 
 USER tests
 
- ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle"]
+ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle"]
+
