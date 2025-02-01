@@ -3,7 +3,9 @@ FROM alpine:latest
 WORKDIR /app/test
 
 RUN apk update \
-    && apk add --no-cache unzip openjdk17-jre \
+    && JAVA_VERSION=$(wget -qO- "https://api.adoptium.net/v3/info/available_releases" | grep '"most_recent_lts":' | grep -o '[0-9]*') \
+    && echo "Installing openjdk${JAVA_VERSION}-jre" \
+    && apk add --no-cache unzip openjdk${JAVA_VERSION}-jre \
     && rm -rf /var/cache/apk/*
 
 RUN GRADLE_VERSION=$(wget -qO- https://gradle.org/releases/ | grep -o 'v[0-9]\+\.[0-9]\+' | head -n1 | cut -c2-) \
