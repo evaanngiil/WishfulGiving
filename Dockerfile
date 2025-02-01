@@ -23,5 +23,5 @@ RUN adduser -D -h /home/tests tests \
 
 USER tests
 
-ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle"]
+ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle", "-Dorg.gradle.project.buildDir=/home/tests/build"]
 
