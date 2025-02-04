@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-WORKDIR /app/test
-
 RUN apk update \
     && JAVA_VERSION=$(wget -qO- "https://api.adoptium.net/v3/info/available_releases" | grep '"most_recent_lts":' | grep -o '[0-9]*') \
     && apk add --no-cache unzip openjdk${JAVA_VERSION} \
@@ -20,6 +18,8 @@ RUN adduser -D -h /home/tests tests \
     && mkdir -p /home/tests/.gradle \
     && mkdir -p /home/tests/build \
     && chown -R tests:tests /home/tests
+
+WORKDIR /app/test
 
 USER tests
 
