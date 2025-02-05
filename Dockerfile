@@ -19,9 +19,10 @@ RUN adduser -D -h /home/tests tests \
     && mkdir -p /home/tests/build \
     && chown -R tests:tests /home/tests
 
+ENV GRADLE_OPTS="-Dorg.gradle.project.buildDir=/home/tests/build -Dorg.gradle.projectcachedir=/home/tests/.gradle"
+
 WORKDIR /app/test
 
 USER tests
 
-ENTRYPOINT ["gradle", "test", "--project-cache-dir", "/home/tests/.gradle", "-Dorg.gradle.project.buildDir=/home/tests/build"]
-
+ENTRYPOINT [ "gradle" , "test" ]
